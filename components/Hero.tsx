@@ -2,12 +2,11 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
-import { ArrowUp, MessageCircle, Phone, Sparkles, Briefcase, Heart, Coins, Activity, ChevronLeft, ChevronRight, Home, TrendingUp, Users, Gem } from 'lucide-react';
+import { ArrowUp, MessageCircle, Phone, Briefcase, Heart, Activity, ChevronLeft, ChevronRight, Home, TrendingUp, Users, Gem } from 'lucide-react';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useSiteSettings } from '@/lib/SiteSettingsContext';
 import { whatsappHref as buildWhatsappHref } from '@/lib/siteSettings';
 import useEmblaCarousel from 'embla-carousel-react';
-import { useIsMobile } from '@/hooks/use-mobile';
 
 const slides = [
   {
@@ -112,7 +111,7 @@ const slides = [
     btnBg: 'bg-[#2563EB]',
     icon: <TrendingUp className="w-12 h-12 md:w-20 md:h-20" />,
     image: '/finance.gif',
-    bottomImage: '/business.png',
+    bottomImage: '/service-cards/business.jpg',
     questions: [
       'व्यापार में घाटा क्यों हो रहा है?', 
       'नया बिज़नेस शुरू करने का शुभ मुहूर्त?', 
@@ -186,23 +185,10 @@ const slideCtas: Record<string, { key: string; href: string }> = {
 export default function Hero() {
   const [showTopBtn, setShowTopBtn] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [dimensions, setDimensions] = useState({ width: 1200, height: 800 });
   const { t } = useLanguage();
   const { telHref, settings } = useSiteSettings();
-  const isMobile = useIsMobile();
   
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setDimensions({ width: window.innerWidth, height: window.innerHeight });
-      const handleResize = () => {
-        setDimensions({ width: window.innerWidth, height: window.innerHeight });
-      };
-      window.addEventListener('resize', handleResize);
-      return () => window.removeEventListener('resize', handleResize);
-    }
-  }, []);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -265,7 +251,7 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(0,0,0,0.06)_100%)]" />
 
       {/* Zodiac rings */}
-      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
         <div className="relative h-[300px] w-[300px] md:h-[680px] md:w-[680px]">
           <div className="absolute inset-0 rounded-full border border-black/[0.06] animate-slow-rotate">
             <div className={`absolute left-1/2 top-0 h-2.5 w-2.5 -translate-x-1/2 rounded-full shadow-md transition-colors duration-1000 ${active.btnBg}`} />

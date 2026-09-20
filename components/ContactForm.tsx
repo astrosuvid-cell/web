@@ -127,70 +127,68 @@ export default function ContactForm({ embedded = false }: ContactFormProps) {
     >
       <div className={embedded ? 'w-full' : 'mx-auto w-full max-w-[1280px] px-4 sm:px-5 lg:px-6'}>
         <div
-          className={`w-full rounded-2xl border border-stone-200/80 md:rounded-3xl ${
-            embedded ? 'overflow-visible shadow-sm' : 'overflow-hidden shadow-lg'
+          className={`w-full border border-stone-200 ${
+            embedded ? 'overflow-visible' : 'overflow-hidden'
           }`}
         >
           <div className="grid lg:grid-cols-2">
             {/* Left trust panel */}
-            <div className="relative bg-[#0f172a] p-6 text-white sm:p-8 lg:p-9">
-              <div className="pointer-events-none absolute -right-8 -top-8 h-40 w-40 rounded-full bg-blue-500/20 blur-3xl" />
+            <div className="relative bg-[#0f172a] p-6 text-white sm:p-8 lg:p-10">
+              <h2 className="font-serif text-2xl leading-tight sm:text-3xl">{t('contact.title')}</h2>
+              <p className="mt-4 text-sm leading-relaxed text-stone-400">{t('contact.subtitle')}</p>
 
-              <h2 className="text-2xl leading-tight sm:text-3xl">{t('contact.title')}</h2>
-              <p className="mt-4 text-sm leading-relaxed text-slate-400">{t('contact.subtitle')}</p>
-
-              <ul className="mt-10 space-y-5">
+              <ul className="mt-10 space-y-6">
                 <li className="flex items-start gap-4">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10">
-                    <Phone size={16} />
+                  <span className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center border border-white/15 text-[#c4a574]">
+                    <Phone size={15} />
                   </span>
                   <div>
-                    <p className="text-[10px] uppercase tracking-widest text-slate-500">{t('contact.channel.call')}</p>
-                    <a href={telHref} className="text-sm font-medium hover:text-blue-300">
+                    <p className="text-xs text-stone-500">{t('contact.channel.call')}</p>
+                    <a href={telHref} className="text-sm font-medium hover:text-[#c4a574]">
                       {settings.phoneDisplay}
                     </a>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10">
-                    <MessageCircle size={16} />
+                  <span className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center border border-white/15 text-[#c4a574]">
+                    <MessageCircle size={15} />
                   </span>
                   <div>
-                    <p className="text-[10px] uppercase tracking-widest text-slate-500">{t('contact.channel.whatsapp')}</p>
+                    <p className="text-xs text-stone-500">{t('contact.channel.whatsapp')}</p>
                     <a
                       href={whatsappHref}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-sm font-medium hover:text-blue-300"
+                      className="text-sm font-medium hover:text-[#c4a574]"
                     >
                       {t('contact.channel.chat')}
                     </a>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10">
-                    <Mail size={16} />
+                  <span className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center border border-white/15 text-[#c4a574]">
+                    <Mail size={15} />
                   </span>
                   <div>
-                    <p className="text-[10px] uppercase tracking-widest text-slate-500">{t('contact.channel.email')}</p>
-                    <a href={supportMailtoHref} className="text-sm font-medium hover:text-blue-300">
+                    <p className="text-xs text-stone-500">{t('contact.channel.email')}</p>
+                    <a href={supportMailtoHref} className="text-sm font-medium hover:text-[#c4a574]">
                       {settings.supportEmail}
                     </a>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10">
-                    <Clock size={16} />
+                  <span className="mt-1 flex h-9 w-9 shrink-0 items-center justify-center border border-white/15 text-[#c4a574]">
+                    <Clock size={15} />
                   </span>
                   <div>
-                    <p className="text-[10px] uppercase tracking-widest text-slate-500">{t('contact.channel.response')}</p>
+                    <p className="text-xs text-stone-500">{t('contact.channel.response')}</p>
                     <p className="text-sm font-medium">{t('contact.channel.responseTime')}</p>
                   </div>
                 </li>
               </ul>
 
-              <div className="mt-10 flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-xs text-slate-400">
-                <Shield size={14} className="shrink-0 text-blue-400" />
+              <div className="mt-10 flex items-center gap-2 border border-white/10 px-4 py-3 text-xs text-stone-400">
+                <Shield size={14} className="shrink-0 text-[#c4a574]" />
                 {t('contact.privacy')}
               </div>
             </div>

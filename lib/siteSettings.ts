@@ -20,10 +20,10 @@ export interface SiteSettings {
 }
 
 export const DEFAULT_SITE_SETTINGS: SiteSettings = {
-  phone: '+919999999999',
-  phoneDisplay: '+91 99999 99999',
-  email: 'hello@astrosuvid.com',
-  supportEmail: 'support@astrosuvid.com',
+  phone: '+919198969988',
+  phoneDisplay: '+91 91989 69988',
+  email: 'Astrosuvid@gmail.com',
+  supportEmail: 'Astrosuvid@gmail.com',
   addressLine: 'Lucknow, Uttar Pradesh 226001, India',
   streetAddress: 'Lucknow',
   addressLocality: 'Lucknow',
@@ -39,7 +39,7 @@ export const DEFAULT_SITE_SETTINGS: SiteSettings = {
 };
 
 export function normalizeSiteSettings(raw: Partial<SiteSettings> | null | undefined): SiteSettings {
-  const social = raw?.social ?? {};
+  const social: Partial<SiteSocialLinks> = raw?.social ?? {};
   return {
     phone: raw?.phone?.trim() || DEFAULT_SITE_SETTINGS.phone,
     phoneDisplay: raw?.phoneDisplay?.trim() || DEFAULT_SITE_SETTINGS.phoneDisplay,
@@ -66,7 +66,7 @@ export function phoneDigits(phone: string): string {
 
 export function telHref(phone: string): string {
   const digits = phoneDigits(phone);
-  return digits ? `tel:+${digits.replace(/^0+/, '')}` : 'tel:+919999999999';
+  return digits ? `tel:+${digits.replace(/^0+/, '')}` : 'tel:+919198969988';
 }
 
 export function whatsappHref(phone: string, message?: string): string {

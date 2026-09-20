@@ -193,18 +193,19 @@ export default function ServicesPageClient({ initialService }: ServicesPageClien
     hasScrolled.current = true;
     const timer = setTimeout(() => {
       const el = document.getElementById(initialService);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }, 150);
+      if (!el) return;
+      // Account for fixed header on mobile
+      const top = el.getBoundingClientRect().top + window.scrollY - 100;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }, 350);
     return () => clearTimeout(timer);
-  }, [initialService]);
+  }, [initialService, services]);
 
   const scrollToService = (id: string) => {
     const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY - 100;
+    window.scrollTo({ top, behavior: 'smooth' });
   };
 
   return (

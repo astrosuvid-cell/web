@@ -191,7 +191,7 @@
     @apply rounded-2xl border border-stone-200/90 bg-white/90 shadow-[0_8px_30px_rgba(15,18,24,0.04)] backdrop-blur-sm;
   }
 
-  /* Admin sidebar — slim overlay scrollbar */
+  /* Admin sidebar ? slim overlay scrollbar */
   .admin-sidebar-scroll [data-slot='scroll-area-scrollbar'] {
     width: 6px;
     padding: 4px 2px;
@@ -303,6 +303,16 @@
   animation: heroFloat 5s ease-in-out infinite;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-orb,
+  .animate-hero-float,
+  .animate-marquee,
+  .animate-slow-rotate,
+  .animate-slow-rotate-reverse {
+    animation: none !important;
+  }
+}
+
 @keyframes shine {
   0% {
     transform: translateX(-140%) skewX(-25deg);
@@ -412,4 +422,46 @@
 
 .service-card:hover .service-icon-wrap {
   animation: serviceIconFloat 2s ease-in-out infinite;
+}
+
+/* Astrological cursor aura — native cursor stays visible */
+.astro-cursor-star {
+  width: 8px;
+  height: 8px;
+  background: #c4a574;
+  clip-path: polygon(
+    50% 0%,
+    62% 38%,
+    100% 50%,
+    62% 62%,
+    50% 100%,
+    38% 62%,
+    0% 50%,
+    38% 38%
+  );
+}
+
+@keyframes astroSparkFade {
+  0% { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(0.25); }
+}
+
+.astro-cursor-spark {
+  position: fixed;
+  z-index: 9997;
+  width: 4px;
+  height: 4px;
+  background: #c4a574;
+  clip-path: polygon(
+    50% 0%,
+    62% 38%,
+    100% 50%,
+    62% 62%,
+    50% 100%,
+    38% 62%,
+    0% 50%,
+    38% 38%
+  );
+  pointer-events: none;
+  animation: astroSparkFade 0.4s ease-out forwards;
 }

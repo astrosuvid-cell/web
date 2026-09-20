@@ -26,66 +26,53 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-[#0c1222] py-16 text-white md:py-24">
-      <div className="pointer-events-none absolute -right-24 top-0 h-96 w-96 rounded-full bg-blue-500/10 blur-[100px]" />
-      <div className="pointer-events-none absolute -left-16 bottom-0 h-72 w-72 rounded-full bg-indigo-500/10 blur-[80px]" />
+    <section className="relative overflow-hidden bg-[#0f172a] py-20 text-[#f7f5f1] md:py-28">
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.07]"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(196,165,116,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(196,165,116,0.5) 1px, transparent 1px)',
+          backgroundSize: '72px 72px',
+          maskImage: 'radial-gradient(ellipse at center, black 20%, transparent 75%)',
+        }}
+      />
 
       <div className="section-container relative">
-        <div className="mb-12 flex flex-col gap-6 md:mb-16 md:flex-row md:items-end md:justify-between">
-          <div>
-            <h2 className="text-3xl tracking-tight sm:text-4xl md:text-5xl">
-              {t('how.title')}{' '}
-              <span className="italic text-blue-400">{t('how.title.highlight')}</span>
-            </h2>
-          </div>
-          <p className="max-w-sm text-sm leading-relaxed text-slate-400 md:text-base">
+        <div className="mb-14 max-w-2xl md:mb-20">
+          <h2 className="font-serif text-3xl tracking-tight sm:text-4xl md:text-5xl">
+            {t('how.title')}{' '}
+            <span className="italic text-[#c4a574]">{t('how.title.highlight')}</span>
+          </h2>
+          <p className="mt-5 max-w-md text-sm leading-relaxed text-stone-400 md:text-base">
             {t('how.subtitle')}
           </p>
         </div>
 
-        <div className="hidden md:grid md:grid-cols-3 md:gap-0">
+        <div className="grid gap-0 md:grid-cols-3">
           {steps.map((step, index) => (
-            <div key={step.num} className="relative px-8 first:pl-0 last:pr-0">
-              {index < steps.length - 1 && (
-                <div className="absolute right-0 top-8 flex items-center gap-1 text-slate-600">
-                  <div className="h-px w-full min-w-[60px] bg-gradient-to-r from-slate-600 to-transparent" />
-                  <ArrowRight size={14} />
-                </div>
-              )}
-              <p className="font-serif text-6xl leading-none text-white/[0.07]">{step.num}</p>
-              <h3 className="mt-2 font-heading text-xl font-semibold text-white">{step.title}</h3>
-              <p className="mt-3 max-w-xs text-sm leading-relaxed text-slate-400">{step.desc}</p>
+            <div
+              key={step.num}
+              className={`relative border-t border-white/10 py-8 md:border-t-0 md:border-l md:px-8 md:py-0 ${
+                index === 0 ? 'md:border-l-0 md:pl-0' : ''
+              } ${index === steps.length - 1 ? 'md:pr-0' : ''}`}
+            >
+              <p className="font-serif text-5xl leading-none text-[#c4a574]/35 md:text-6xl">
+                {step.num}
+              </p>
+              <h3 className="mt-5 font-serif text-xl text-white md:text-2xl">{step.title}</h3>
+              <p className="mt-3 max-w-xs text-sm leading-relaxed text-stone-400">{step.desc}</p>
             </div>
           ))}
         </div>
 
-        <div className="space-y-0 md:hidden">
-          {steps.map((step, index) => (
-            <div key={step.num} className="relative flex gap-5 pb-10 last:pb-0">
-              <div className="flex flex-col items-center">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-blue-400/40 bg-blue-500/10 font-mono text-xs text-blue-300">
-                  {step.num}
-                </div>
-                {index < steps.length - 1 && (
-                  <div className="mt-2 w-px flex-1 bg-gradient-to-b from-blue-400/40 to-transparent" />
-                )}
-              </div>
-              <div className="pt-1.5">
-                <h3 className="font-heading text-lg font-semibold">{step.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-400">{step.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-12 flex flex-col items-start gap-4 border-t border-white/10 pt-10 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm text-slate-500">{t('how.note')}</p>
+        <div className="mt-14 flex flex-col items-start gap-5 border-t border-white/10 pt-10 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-sm text-stone-500">{t('how.note')}</p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-xs font-bold uppercase tracking-[0.2em] text-slate-900 transition-transform hover:scale-[1.02]"
+            className="inline-flex items-center gap-2 bg-[#c4a574] px-6 py-3 text-sm font-medium text-[#0f172a] transition-colors hover:bg-[#d4b884]"
           >
             {t('how.cta')}
-            <ArrowRight size={14} />
+            <ArrowRight size={16} />
           </Link>
         </div>
       </div>

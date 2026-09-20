@@ -20,6 +20,8 @@ import { Label } from '@/components/ui/label';
 import { submitEnquiry } from '@/lib/submitEnquiry';
 import { useToast } from '@/hooks/use-toast';
 import ServiceShowcaseCard, { type ServiceItem } from '@/components/services/ServiceShowcaseCard';
+import Tilt3D from '@/components/effects/Tilt3D';
+import ScrollReveal3D from '@/components/effects/ScrollReveal3D';
 
 const FEATURED_IDS = ['kundli', 'prashna'];
 
@@ -190,10 +192,10 @@ export default function OurServices() {
       id: 'business',
       title: t('service.business.title'),
       desc: t('service.business.desc'),
-      image: '/service-cards/business.png',
+      image: '/service-cards/business.jpg',
       imageAlt: 'Business growth astrology',
       imageBg: 'from-orange-50 via-amber-50 to-yellow-100 dark:from-orange-950 dark:via-amber-950 dark:to-slate-900',
-      imageFit: 'contain',
+      imageFit: 'cover',
       btnText: t('service.business.btn'),
       accentBar: 'bg-yellow-500',
       accentGlow: 'bg-yellow-400/25',
@@ -223,33 +225,25 @@ export default function OurServices() {
   };
 
   return (
-    <section id="services" className="relative overflow-hidden bg-[#fbfbfc] py-16 md:py-28 dark:bg-[#07090e]">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.4] dark:opacity-[0.08]"
-        style={{
-          backgroundImage:
-            'radial-gradient(circle at 20% 10%, rgba(37,99,235,0.06), transparent 40%), radial-gradient(circle at 80% 90%, rgba(245,158,11,0.05), transparent 35%)',
-        }}
-      />
-
+    <section id="services" className="relative overflow-hidden bg-[#fbfbfa] py-20 pb-32 md:py-28 md:pb-28">
+      <ScrollReveal3D>
       <div className="section-container relative">
         {/* Header */}
-        <div className="mb-10 grid gap-8 md:mb-14 lg:grid-cols-[1fr_auto] lg:items-end">
+        <div className="mb-12 grid gap-6 border-b border-stone-200 pb-10 md:mb-14 lg:grid-cols-[1fr_auto] lg:items-end">
           <div className="max-w-2xl">
-            <h2 className="text-[2rem] leading-[1.08] tracking-tight sm:text-4xl md:text-5xl lg:text-[3.25rem]">
+            <h2 className="font-serif text-[2rem] leading-[1.08] tracking-tight text-stone-900 sm:text-4xl md:text-5xl lg:text-[3.1rem]">
               {t('home.services.title')}{' '}
-              <span className="italic text-primary">{t('home.services.title.highlight')}</span>{' '}
+              <span className="italic text-[#8a6d42]">{t('home.services.title.highlight')}</span>{' '}
               {t('home.services.title.suffix')}
             </h2>
-            <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
+            <p className="mt-5 text-base leading-relaxed text-stone-600 sm:text-lg">
               {t('services.subtitle')}
             </p>
           </div>
 
           <Link
             href="/services"
-            className="inline-flex h-fit items-center gap-2 self-start rounded-full border border-border bg-background px-5 py-3 text-[10px] font-bold uppercase tracking-[0.2em] text-foreground transition-colors hover:border-primary/40 hover:bg-primary/5 hover:text-primary lg:self-auto"
+            className="inline-flex h-fit items-center gap-2 self-start border border-stone-300 bg-white px-5 py-3 text-sm font-medium text-stone-800 transition-colors hover:border-stone-500 hover:bg-stone-50 lg:self-auto"
           >
             {t('home.services.all')}
             <ArrowRight size={14} />
@@ -259,46 +253,49 @@ export default function OurServices() {
         {/* Featured pair */}
         <div className="mb-4 grid gap-4 sm:gap-5 md:grid-cols-2">
           {featured.map((service, index) => (
-            <ServiceShowcaseCard
-              key={service.id}
-              service={service}
-              index={index}
-              featured
-              onCardClick={() => router.push(service.cardHref)}
-              onActionClick={(e) => handleAction(service, e)}
-            />
+            <Tilt3D key={service.id} className="rounded-none" maxTilt={6} glare={false}>
+              <ServiceShowcaseCard
+                service={service}
+                index={index}
+                featured
+                onCardClick={() => router.push(service.cardHref)}
+                onActionClick={(e) => handleAction(service, e)}
+              />
+            </Tilt3D>
           ))}
         </div>
 
         {/* Standard grid */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
           {standard.map((service, index) => (
-            <ServiceShowcaseCard
-              key={service.id}
-              service={service}
-              index={index + featured.length}
-              onCardClick={() => router.push(service.cardHref)}
-              onActionClick={(e) => handleAction(service, e)}
-            />
+            <Tilt3D key={service.id} className="rounded-none" maxTilt={6} glare={false}>
+              <ServiceShowcaseCard
+                service={service}
+                index={index + featured.length}
+                onCardClick={() => router.push(service.cardHref)}
+                onActionClick={(e) => handleAction(service, e)}
+              />
+            </Tilt3D>
           ))}
         </div>
 
         {/* Bottom CTA strip */}
-        <div className="mt-10 flex flex-col items-center justify-between gap-4 rounded-2xl border border-border/70 bg-background/80 px-6 py-5 sm:flex-row sm:px-8">
-          <p className="text-center text-sm text-muted-foreground sm:text-left">
+        <div className="mt-12 flex flex-col items-start justify-between gap-5 border border-stone-200 bg-white px-6 py-6 sm:flex-row sm:items-center sm:px-8">
+          <p className="text-sm text-stone-600 sm:text-left">
             {t('home.services.notSure')}{' '}
-            <span className="text-foreground">{t('home.services.guideYou')}</span>
+            <span className="text-stone-900">{t('home.services.guideYou')}</span>
           </p>
           <Button
             type="button"
             onClick={() => setIsAskNowOpen(true)}
-            className="h-11 shrink-0 rounded-full px-6 text-[10px] font-bold uppercase tracking-[0.2em]"
+            className="h-11 shrink-0 rounded-none bg-[#0f172a] px-6 text-sm font-medium text-white hover:bg-[#1e293b]"
           >
             {t('home.services.askNow')}
             <ArrowRight size={14} className="ml-2" />
           </Button>
         </div>
       </div>
+      </ScrollReveal3D>
 
       {/* Prashna / Kundli — Ask Now Dialog */}
       <Dialog open={isAskNowOpen} onOpenChange={setIsAskNowOpen}>

@@ -31,7 +31,7 @@ export default function MallShowcaseCard({
 
   return (
     <article
-      className={`group relative h-full min-h-[300px] overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition-all duration-500 hover:border-amber-400/35 hover:shadow-[0_24px_60px_rgba(0,0,0,0.45)] ${
+      className={`group relative h-full min-h-[300px] overflow-hidden rounded-2xl border border-stone-200 bg-stone-900 shadow-sm transition-all duration-500 hover:border-[#c4a574]/50 hover:shadow-[0_20px_50px_rgba(15,23,42,0.12)] ${
         isHero ? 'min-h-[420px] sm:min-h-[480px]' : 'min-h-[260px] sm:min-h-[280px]'
       }`}
     >
@@ -122,7 +122,7 @@ export default function MallShowcaseCard({
 export function MallShowcaseSkeleton({ hero = false }: { hero?: boolean }) {
   return (
     <div
-      className={`animate-pulse overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] ${
+      className={`animate-pulse overflow-hidden rounded-2xl border border-stone-200 bg-stone-200/60 ${
         hero ? 'min-h-[420px]' : 'min-h-[280px]'
       }`}
     />

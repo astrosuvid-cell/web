@@ -12,8 +12,8 @@ export const SITE_LOCALE = 'en_IN';
 export const SITE_LOGO = '/logo.png';
 export const SITE_LOGO_MARK = '/logo-mark.png';
 export const DEFAULT_OG_IMAGE = '/og-image.png';
-export const CONTACT_PHONE = '+919999999999';
-export const CONTACT_EMAIL = 'hello@astrosuvid.com';
+export const CONTACT_PHONE = '+919198969988';
+export const CONTACT_EMAIL = 'Astrosuvid@gmail.com';
 export const BUSINESS_ADDRESS = {
   streetAddress: 'Lucknow',
   addressLocality: 'Lucknow',

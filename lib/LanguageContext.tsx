@@ -143,11 +143,13 @@ const translations = {
 
     // Service 2: Tarot Reading
     'service.tarot.title': 'Tarot Reading',
-    'service.tarot.desc': 'Simple and effective guidance to understand your current situation and future possibilities.',
+    'service.tarot.desc': 'Intuitive guidance through tarot to illuminate your current situation and future path',
     'service.tarot.f1': 'Intuitive Spreads',
     'service.tarot.f2': 'Spiritual Growth',
     'service.tarot.f3': 'Decision Clarity',
     'service.tarot.f4': 'Energy Alignment',
+    'service.tarot.btn': 'Book Now',
+    'service.tarot.details': 'Expert tarot card reading to give you clarity on your relationships, career, and personal life.',
 
     // New Services Section
     'service.kundli.title': 'Janm Kundli Reading',
@@ -159,11 +161,6 @@ const translations = {
     'service.prashna.desc': 'Get answers to your specific questions instantly',
     'service.prashna.btn': 'Ask Now',
     'service.prashna.details': 'Horary astrology providing immediate answers to specific queries without a birth chart, based on the planetary alignment at the moment of asking.',
-    
-    'service.tarot.title': 'Tarot Reading',
-    'service.tarot.desc': 'Intuitive guidance through tarot to illuminate your current situation and future path',
-    'service.tarot.btn': 'Book Now',
-    'service.tarot.details': 'Expert tarot card reading to give you clarity on your relationships, career, and personal life.',
     
     'service.vastu.title': 'Vastu Consultation',
     'service.vastu.desc': 'Home / Shop / Office solutions',
@@ -863,12 +860,14 @@ const translations = {
     'service.vedic.f4': 'संबंध अनुकूलता',
 
     // Service 2: Sacred Tarot
-    'service.tarot.title': 'पवित्र टैरो',
-    'service.tarot.desc': 'आपकी वर्तमान ऊर्जाओं और मार्गों को रोशन करने के लिए गूढ़ प्रतीकवाद का उपयोग करते हुए सहज मार्गदर्शन।',
+    'service.tarot.title': 'टैरो कार्ड रीडिंग',
+    'service.tarot.desc': 'आपकी वर्तमान स्थिति और भविष्य के पथ को रोशन करने के लिए टैरो के माध्यम से सहज मार्गदर्शन',
     'service.tarot.f1': 'सहज स्प्रेड्स',
     'service.tarot.f2': 'आध्यात्मिक विकास',
     'service.tarot.f3': 'निर्णय स्पष्टता',
     'service.tarot.f4': 'ऊर्जा संरेखण',
+    'service.tarot.btn': 'बुक नाउ',
+    'service.tarot.details': 'गूढ़ प्रतीकवाद और ऊर्जा संरेखण का उपयोग करके रिश्तों, करियर और व्यक्तिगत विकास पर सहज मार्गदर्शन प्रदान करने वाले पवित्र टैरो स्प्रेड।',
 
     // New Services Section
     'service.kundli.title': 'जन्म कुंडली विश्लेषण',
@@ -905,11 +904,6 @@ const translations = {
     'service.business.desc': 'व्यापार में सफलता और घाटे से उबरने के लिए ज्योतिषीय मार्गदर्शन प्राप्त करें',
     'service.business.btn': 'व्यापार बढ़ाएं',
     'service.business.details': 'उद्यमियों के लिए रणनीतिक ज्योतिषीय परामर्श, जो शुभ लॉन्चिंग समय, साझेदारी अनुकूलता और वित्तीय सुधार पर केंद्रित है।',
-
-    'service.tarot.title': 'टैरो कार्ड रीडिंग',
-    'service.tarot.desc': 'आपकी वर्तमान स्थिति और भविष्य के पथ को रोशन करने के लिए टैरो के माध्यम से सहज मार्गदर्शन',
-    'service.tarot.btn': 'बुक नाउ',
-    'service.tarot.details': 'गूढ़ प्रतीकवाद और ऊर्जा संरेखण का उपयोग करके रिश्तों, करियर और व्यक्तिगत विकास पर सहज मार्गदर्शन प्रदान करने वाले पवित्र टैरो स्प्रेड।',
 
     // Business Growth Page
     'business.hero.title': 'व्यापार वृद्धि पेज',

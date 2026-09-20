@@ -15,6 +15,7 @@ import {
 } from '@/lib/seo'
 import PWAInstallPrompt from '@/components/pwa/PWAInstallPrompt'
 import ServiceWorkerRegister from '@/components/pwa/ServiceWorkerRegister'
+import CustomCursor from '@/components/effects/CustomCursor'
 import './globals.css'
 
 const hind = Hind({
@@ -91,6 +92,7 @@ export default async function RootLayout({
             <LanguageProvider>
               <SelectedServiceProvider>
                 {children}
+                <CustomCursor />
                 <ServiceWorkerRegister />
                 <PWAInstallPrompt />
                 {process.env.NODE_ENV === 'production' && <Analytics />}

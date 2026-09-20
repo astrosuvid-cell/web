@@ -10,10 +10,10 @@ INSERT INTO site_settings (key, value)
 VALUES (
   'business',
   '{
-    "phone": "+919999999999",
-    "phoneDisplay": "+91 99999 99999",
-    "email": "hello@astrosuvid.com",
-    "supportEmail": "support@astrosuvid.com",
+    "phone": "+919198969988",
+    "phoneDisplay": "+91 91989 69988",
+    "email": "Astrosuvid@gmail.com",
+    "supportEmail": "Astrosuvid@gmail.com",
     "addressLine": "Lucknow, Uttar Pradesh 226001, India",
     "streetAddress": "Lucknow",
     "addressLocality": "Lucknow",

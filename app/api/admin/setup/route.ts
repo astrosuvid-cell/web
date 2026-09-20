@@ -4,11 +4,11 @@ import { supabaseAdmin } from '@/lib/supabaseServer';
 export async function POST(request: NextRequest) {
   try {
     // Check if admin exists
-    const { data: adminCount } = await supabaseAdmin
+    const { count } = await supabaseAdmin
       .from('admin_users')
       .select('id', { count: 'exact', head: true });
 
-    if (adminCount?.count && adminCount.count > 0) {
+    if (count && count > 0) {
       return NextResponse.json({ error: 'Admin already exists' }, { status: 400 });
     }
 
