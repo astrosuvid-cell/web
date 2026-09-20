@@ -18,6 +18,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { submitEnquiry } from '@/lib/submitEnquiry';
+import { useToast } from '@/hooks/use-toast';
 import ServiceShowcaseCard, { type ServiceItem } from '@/components/services/ServiceShowcaseCard';
 
 const FEATURED_IDS = ['kundli', 'prashna'];
@@ -26,6 +27,7 @@ export default function OurServices() {
   const router = useRouter();
   const { t } = useLanguage();
   const { settings } = useSiteSettings();
+  const { toast } = useToast();
   const [isMatchmakingOpen, setIsMatchmakingOpen] = useState(false);
   const [isAskNowOpen, setIsAskNowOpen] = useState(false);
   const [matchmakingDetails, setMatchmakingDetails] = useState({
@@ -64,9 +66,14 @@ export default function OurServices() {
     setIsMatchmakingSubmitting(false);
 
     if (result.success) {
-      const encodedMessage = encodeURIComponent(message);
       window.open(buildWhatsappHref(settings.phone, message), '_blank');
       setIsMatchmakingOpen(false);
+    } else {
+      toast({
+        variant: 'destructive',
+        title: 'Submission failed',
+        description: result.error || 'Please try again or contact us on WhatsApp.',
+      });
     }
   };
 

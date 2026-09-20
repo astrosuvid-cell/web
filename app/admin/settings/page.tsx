@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Settings } from 'lucide-react';
+import { KeyRound, Settings } from 'lucide-react';
 import AdminLayout from '@/components/admin/AdminLayout';
 import AdminPageHeader from '@/components/admin/AdminPageHeader';
 import { Button } from '@/components/ui/button';
@@ -18,6 +18,14 @@ export default function AdminSettingsPage() {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
+
+  const [currentPassword, setCurrentPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [passwordSaving, setPasswordSaving] = useState(false);
+  const [passwordMessage, setPasswordMessage] = useState<{ type: 'ok' | 'err'; text: string } | null>(
+    null
+  );
 
   const getHeaders = () => ({
     Authorization: `Bearer ${localStorage.getItem('adminToken') || ''}`,
@@ -67,11 +75,47 @@ export default function AdminSettingsPage() {
     }
   };
 
+  const changePassword = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setPasswordMessage(null);
+
+    if (newPassword.length < 8) {
+      setPasswordMessage({ type: 'err', text: 'New password must be at least 8 characters.' });
+      return;
+    }
+    if (newPassword !== confirmPassword) {
+      setPasswordMessage({ type: 'err', text: 'New password and confirmation do not match.' });
+      return;
+    }
+
+    setPasswordSaving(true);
+    try {
+      const res = await fetch('/api/admin/password', {
+        method: 'PUT',
+        headers: getHeaders(),
+        body: JSON.stringify({ currentPassword, newPassword }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setPasswordMessage({ type: 'err', text: data.error || 'Failed to update password.' });
+        return;
+      }
+      setCurrentPassword('');
+      setNewPassword('');
+      setConfirmPassword('');
+      setPasswordMessage({ type: 'ok', text: 'Password updated successfully.' });
+    } catch {
+      setPasswordMessage({ type: 'err', text: 'Something went wrong. Please try again.' });
+    } finally {
+      setPasswordSaving(false);
+    }
+  };
+
   return (
     <AdminLayout>
       <AdminPageHeader
-        title="Business Settings"
-        description="Update contact details and social links shown across the website, footer, contact page, and legal policies."
+        title="Settings"
+        description="Contact details, social links, and account password."
       />
 
       {loading ? (
@@ -79,8 +123,9 @@ export default function AdminSettingsPage() {
           Loading settings…
         </div>
       ) : (
+        <div className="space-y-8">
         <form onSubmit={saveSettings} className="space-y-8">
-          <section className="rounded-xl border border-slate-200/80 bg-white p-6 shadow-sm">
+          <section className="admin-panel p-6 shadow-sm">
             <h2 className="text-base font-semibold text-slate-900">Contact details</h2>
             <p className="mt-1 text-sm text-slate-500">
               These appear in the header, footer, contact form, and policy pages.
@@ -142,7 +187,7 @@ export default function AdminSettingsPage() {
             </div>
           </section>
 
-          <section className="rounded-xl border border-slate-200/80 bg-white p-6 shadow-sm">
+          <section className="admin-panel p-6 shadow-sm">
             <h2 className="text-base font-semibold text-slate-900">Address (structured)</h2>
             <p className="mt-1 text-sm text-slate-500">Used for SEO and local business schema.</p>
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -177,7 +222,7 @@ export default function AdminSettingsPage() {
             </div>
           </section>
 
-          <section className="rounded-xl border border-slate-200/80 bg-white p-6 shadow-sm">
+          <section className="admin-panel p-6 shadow-sm">
             <h2 className="text-base font-semibold text-slate-900">Social media links</h2>
             <p className="mt-1 text-sm text-slate-500">
               Leave blank to hide a link in the footer. Use full URLs (https://…).
@@ -224,6 +269,78 @@ export default function AdminSettingsPage() {
             {saved && <p className="text-sm text-emerald-600">Settings saved. Changes are live on the website.</p>}
           </div>
         </form>
+
+        <form onSubmit={changePassword} className="admin-panel space-y-5 p-6 shadow-sm">
+          <div>
+            <h2 className="text-base font-semibold text-slate-900">Change password</h2>
+            <p className="mt-1 text-sm text-slate-500">
+              Update your admin login password. Other open sessions will be signed out.
+            </p>
+          </div>
+
+          {passwordMessage && (
+            <div
+              className={`rounded-lg border px-4 py-3 text-sm ${
+                passwordMessage.type === 'ok'
+                  ? 'border-emerald-200 bg-emerald-50 text-emerald-700'
+                  : 'border-rose-200 bg-rose-50 text-rose-700'
+              }`}
+            >
+              {passwordMessage.text}
+            </div>
+          )}
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="space-y-2 sm:col-span-2">
+              <Label htmlFor="current-password">Current password</Label>
+              <Input
+                id="current-password"
+                type="password"
+                autoComplete="current-password"
+                value={currentPassword}
+                onChange={(e) => setCurrentPassword(e.target.value)}
+                required
+                disabled={passwordSaving}
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="new-password">New password</Label>
+              <Input
+                id="new-password"
+                type="password"
+                autoComplete="new-password"
+                value={newPassword}
+                onChange={(e) => setNewPassword(e.target.value)}
+                required
+                minLength={8}
+                disabled={passwordSaving}
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="confirm-password">Confirm new password</Label>
+              <Input
+                id="confirm-password"
+                type="password"
+                autoComplete="new-password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+                minLength={8}
+                disabled={passwordSaving}
+              />
+            </div>
+          </div>
+
+          <Button
+            type="submit"
+            disabled={passwordSaving}
+            className="gap-2 bg-slate-900 text-white hover:bg-slate-800"
+          >
+            <KeyRound size={16} />
+            {passwordSaving ? 'Updating…' : 'Update password'}
+          </Button>
+        </form>
+        </div>
       )}
     </AdminLayout>
   );

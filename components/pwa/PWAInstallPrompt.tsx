@@ -108,7 +108,7 @@ export default function PWAInstallPrompt() {
       <div className="fixed inset-x-0 bottom-0 z-[70] border-t border-amber-200/80 bg-white/95 p-3 shadow-[0_-8px_30px_rgba(0,0,0,0.12)] backdrop-blur-md md:hidden">
         <div className="mx-auto flex max-w-lg items-center gap-3">
           <div className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-amber-50 ring-1 ring-amber-200/60">
-            <Image src="/logo.png" alt="Astro Paramarsh" width={44} height={44} className="h-9 w-9 rounded-full object-cover" />
+            <Image src="/logo-mark.png" alt="Astro Suvid" width={44} height={44} className="h-9 w-9 object-contain" />
           </div>
           <div className="min-w-0 flex-1">
             <p className="truncate text-sm font-semibold text-stone-900">{t('pwa.bar.title')}</p>
@@ -146,10 +146,10 @@ export default function PWAInstallPrompt() {
               <div className="flex items-start justify-between gap-3">
                 <div className="flex items-center gap-3">
                   <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl bg-white/10 ring-1 ring-white/20">
-                    <Image src="/logo.png" alt="" width={56} height={56} className="h-12 w-12 rounded-full object-cover" />
+                    <Image src="/icon-192.png" alt="" width={56} height={56} className="h-12 w-12 rounded-xl object-cover" />
                   </div>
                   <div>
-                    <p className="text-xs uppercase tracking-widest text-amber-100/80">Astro Paramarsh</p>
+                    <p className="text-xs uppercase tracking-widest text-amber-100/80">Astro Suvid</p>
                     <h2 id="pwa-install-title" className="text-lg font-semibold leading-tight">
                       {t('pwa.modal.title')}
                     </h2>

@@ -8,7 +8,7 @@ import { buildMetadata } from '@/lib/seo';
 export const metadata: Metadata = buildMetadata({
   title: 'Terms & Conditions',
   description:
-    'Terms and conditions for using Astro Paramarsh astrology consultations, tarot readings, and Astromall gemstone purchases.',
+    'Terms and conditions for using Astro Suvid astrology consultations, tarot readings, and Astromall gemstone purchases.',
   path: '/terms-of-service',
 });
 

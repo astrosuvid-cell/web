@@ -8,7 +8,7 @@ import { buildMetadata } from '@/lib/seo';
 export const metadata: Metadata = buildMetadata({
   title: 'Cancellation & Refund Policy',
   description:
-    'Cancellation and refund policy for Astro Paramarsh astrology consultations and Astromall gemstone orders.',
+    'Cancellation and refund policy for Astro Suvid astrology consultations and Astromall gemstone orders.',
   path: '/cancellation-refund',
 });
 

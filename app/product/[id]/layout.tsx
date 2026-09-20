@@ -27,7 +27,7 @@ export async function generateMetadata({
     title: `${product.name} — Vedic Gemstone`,
     description:
       product.description ||
-      `Buy authentic ${product.name} — lab-certified Vedic gemstone recommended by Astro Paramarsh astrologers.`,
+      `Buy authentic ${product.name} — lab-certified Vedic gemstone recommended by Astro Suvid astrologers.`,
     path: `/product/${id}`,
     keywords: [product.name, 'vedic gemstone', 'astromall', 'lucky stone'],
     image: product.image_url,

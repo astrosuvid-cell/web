@@ -4,10 +4,10 @@ import { buildMetadata } from '@/lib/seo';
 export const metadata: Metadata = buildMetadata({
   title: 'About Us',
   description:
-    'Meet Astro Paramarsh — trusted Vedic astrologers and tarot readers in Lucknow offering honest, tradition-rooted guidance for career, marriage, health and life decisions.',
+    'Meet Astro Suvid — trusted Vedic astrologers and tarot readers in Lucknow offering honest, tradition-rooted guidance for career, marriage, health and life decisions.',
   path: '/about',
   keywords: [
-    'about Astro Paramarsh',
+    'about Astro Suvid',
     'vedic astrologer lucknow',
     'astrology team',
     'spiritual guidance india',

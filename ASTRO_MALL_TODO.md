@@ -1,4 +1,4 @@
-# Astro Paramarsh Astro Mall Implementation
+# Astro Suvid Astro Mall Implementation
 
 ## Completed: 2/12
 

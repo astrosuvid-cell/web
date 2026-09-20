@@ -8,7 +8,7 @@ import { buildMetadata } from '@/lib/seo';
 export const metadata: Metadata = buildMetadata({
   title: 'Shipping & Delivery Policy',
   description:
-    'Shipping, delivery timelines, and tracking information for Astro Paramarsh Astromall gemstone orders across India.',
+    'Shipping, delivery timelines, and tracking information for Astro Suvid Astromall gemstone orders across India.',
   path: '/shipping-delivery',
 });
 

@@ -1,11 +1,11 @@
-# Astro Paramarsh - Supabase Manual Setup (No CLI)
+# Astro Suvid - Supabase Manual Setup (No CLI)
 
 ## Manual Steps (Dashboard + Copy-Paste)
 
 ### 1. [ ] **Login Admin User**
 ```
 URL: http://localhost:3000/admin/login
-Email: admin@astroparamarsh.com
+Email: admin@astrosuvid.com
 Password: admin123
 ```
 *Note: This assumes admin_users table exists - skip if 500 error*

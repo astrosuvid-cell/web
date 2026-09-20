@@ -22,8 +22,8 @@ export interface SiteSettings {
 export const DEFAULT_SITE_SETTINGS: SiteSettings = {
   phone: '+919999999999',
   phoneDisplay: '+91 99999 99999',
-  email: 'hello@astroparamarsh.com',
-  supportEmail: 'support@astroparamarsh.com',
+  email: 'hello@astrosuvid.com',
+  supportEmail: 'support@astrosuvid.com',
   addressLine: 'Lucknow, Uttar Pradesh 226001, India',
   streetAddress: 'Lucknow',
   addressLocality: 'Lucknow',

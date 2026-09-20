@@ -105,7 +105,7 @@ export default function AnalyticsPage() {
       </div>
 
       <div className="mt-8 grid gap-6 lg:grid-cols-2">
-        <div className="rounded-xl border border-slate-200/80 bg-white p-5 shadow-sm">
+        <div className="admin-panel p-5 shadow-sm">
           <h3 className="text-sm font-semibold text-slate-900">Enquiries — last 7 days</h3>
           {loading ? (
             <div className="flex h-64 items-center justify-center text-sm text-slate-500">Loading…</div>
@@ -122,7 +122,7 @@ export default function AnalyticsPage() {
           )}
         </div>
 
-        <div className="rounded-xl border border-slate-200/80 bg-white p-5 shadow-sm">
+        <div className="admin-panel p-5 shadow-sm">
           <h3 className="text-sm font-semibold text-slate-900">Enquiry status</h3>
           {loading || statusPie.length === 0 ? (
             <div className="flex h-64 items-center justify-center text-sm text-slate-500">
@@ -150,7 +150,7 @@ export default function AnalyticsPage() {
           )}
         </div>
 
-        <div className="rounded-xl border border-slate-200/80 bg-white p-5 shadow-sm lg:col-span-2">
+        <div className="admin-panel p-5 shadow-sm lg:col-span-2">
           <h3 className="text-sm font-semibold text-slate-900">Enquiries by service type</h3>
           {loading || !data?.enquiriesByService.length ? (
             <div className="py-12 text-center text-sm text-slate-500">
@@ -181,7 +181,7 @@ export default function AnalyticsPage() {
         </div>
 
         {data && data.topPages.length > 0 && (
-          <div className="rounded-xl border border-slate-200/80 bg-white p-5 shadow-sm lg:col-span-2">
+          <div className="admin-panel p-5 shadow-sm lg:col-span-2">
             <h3 className="text-sm font-semibold text-slate-900">Top pages (tracked views)</h3>
             <div className="mt-4 grid gap-2 sm:grid-cols-2">
               {data.topPages.map((p) => (

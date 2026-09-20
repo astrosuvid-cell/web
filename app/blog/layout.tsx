@@ -4,7 +4,7 @@ import { buildMetadata } from '@/lib/seo';
 export const metadata: Metadata = buildMetadata({
   title: 'Astrology Blog & Cosmic Insights',
   description:
-    'Read Vedic astrology articles, tarot insights, marriage and career guidance, gemstone tips and daily cosmic wisdom from Astro Paramarsh experts.',
+    'Read Vedic astrology articles, tarot insights, marriage and career guidance, gemstone tips and daily cosmic wisdom from Astro Suvid experts.',
   path: '/blog',
   keywords: [
     'astrology blog',

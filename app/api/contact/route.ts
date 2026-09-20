@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
       .from('contact_responses')
       .insert({
         name: name.trim(),
-        email: email?.trim() || 'not-provided@astroparamarsh.com',
+        email: email?.trim() || 'not-provided@astrosuvid.com',
         phone: phone?.trim() || 'Not provided',
         service_type: service_type.trim(),
         message: message.trim(),

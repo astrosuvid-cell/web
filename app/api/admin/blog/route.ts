@@ -49,7 +49,7 @@ export async function POST(request: NextRequest) {
         excerpt: excerpt?.trim() || null,
         category: category?.trim() || null,
         image_url: image_url?.trim() || null,
-        author: author?.trim() || 'Astro Paramarsh',
+        author: author?.trim() || 'Astro Suvid',
         is_published: published,
         published_at: published ? new Date().toISOString() : null,
       })
@@ -86,7 +86,7 @@ export async function PUT(request: NextRequest) {
     if (excerpt !== undefined) updates.excerpt = excerpt?.trim() || null;
     if (category !== undefined) updates.category = category?.trim() || null;
     if (image_url !== undefined) updates.image_url = image_url?.trim() || null;
-    if (author !== undefined) updates.author = author?.trim() || 'Astro Paramarsh';
+    if (author !== undefined) updates.author = author?.trim() || 'Astro Suvid';
     if (is_published !== undefined) {
       updates.is_published = Boolean(is_published);
       updates.published_at = is_published ? new Date().toISOString() : null;

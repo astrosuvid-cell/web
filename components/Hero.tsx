@@ -431,7 +431,7 @@ export default function Hero() {
         <a
           href={buildWhatsappHref(
             settings.phone,
-            "Hi Astro Paramarsh! I'd like a consultation."
+            "Hi Astro Suvid! I'd like a consultation."
           )}
           target="_blank"
           rel="noopener noreferrer"

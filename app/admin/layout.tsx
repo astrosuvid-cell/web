@@ -3,7 +3,7 @@ import { buildMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = buildMetadata({
   title: 'Admin',
-  description: 'Astro Paramarsh administration panel.',
+  description: 'Astro Suvid administration panel.',
   path: '/admin',
   noIndex: true,
 });

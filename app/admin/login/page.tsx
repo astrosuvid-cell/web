@@ -48,80 +48,80 @@ export default function AdminLogin() {
   };
 
   return (
-    <main className="flex min-h-screen bg-[#f6f7f9]">
-      <div className="hidden w-1/2 flex-col justify-between bg-[#0f1117] p-12 text-white lg:flex">
+    <main className="admin-shell flex min-h-screen">
+      <div className="hidden w-[42%] flex-col justify-between border-r border-stone-200 bg-white p-12 lg:flex">
         <div>
-          <span className="text-xl font-semibold tracking-tight">
-            Astro <span className="text-blue-400">Paramarsh</span>
-          </span>
-          <p className="mt-1 text-sm text-slate-500">Operations Console</p>
+          <img src="/logo.png" alt="Astro Suvid" className="h-12 w-auto max-w-[220px] object-contain" />
+          <p className="mt-3 text-sm text-stone-500">Admin panel</p>
         </div>
-        <div className="max-w-md">
-          <h1 className="text-3xl font-semibold leading-tight tracking-tight">
-            Manage enquiries, products, and content in one place.
+
+        <div className="max-w-sm">
+          <h1 className="text-3xl font-semibold leading-snug text-stone-900">
+            Manage your website content and enquiries.
           </h1>
-          <p className="mt-4 text-sm leading-relaxed text-slate-400">
-            Secure access for authorised team members only.
+          <p className="mt-4 text-sm leading-relaxed text-stone-500">
+            Sign in to update services, products, blog posts, and respond to customer messages.
           </p>
         </div>
-        <p className="text-xs text-slate-600">© Astro Paramarsh</p>
+
+        <p className="text-xs text-stone-400">© Astro Suvid. Authorised access only.</p>
       </div>
 
       <div className="flex flex-1 flex-col justify-center px-6 py-12 sm:px-12">
         <Link
           href="/"
-          className="mb-8 inline-flex items-center gap-2 text-sm text-slate-500 transition-colors hover:text-slate-800 lg:mb-12"
+          className="mb-8 inline-flex items-center gap-2 text-sm text-stone-500 transition-colors hover:text-stone-800"
         >
           <ArrowLeft size={16} />
           Back to website
         </Link>
 
         <div className="mx-auto w-full max-w-sm">
-          <div className="mb-8 lg:hidden">
-            <span className="text-xl font-semibold text-slate-900">
-              Astro <span className="text-blue-600">Paramarsh</span>
-            </span>
+          <div className="lg:hidden">
+            <img src="/logo.png" alt="Astro Suvid" className="h-10 w-auto max-w-[180px] object-contain" />
+            <p className="mt-2 text-sm text-stone-500">Admin panel</p>
           </div>
 
-          <h2 className="text-2xl font-semibold tracking-tight text-slate-900">Sign in</h2>
-          <p className="mt-2 text-sm text-slate-500">Enter your admin credentials to continue.</p>
+          <h2 className="mt-8 text-xl font-semibold text-stone-900 lg:mt-0">Sign in</h2>
+          <p className="mt-1 text-sm text-stone-500">Enter your admin credentials</p>
 
           <form onSubmit={handleSubmit} className="mt-8 space-y-5">
             {error && (
-              <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+              <div className="rounded-lg border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-700">
                 {error}
               </div>
             )}
 
             <div className="space-y-2">
-              <label className="text-sm font-medium text-slate-700">Email</label>
+              <label className="text-sm font-medium text-stone-700">Email</label>
               <Input
                 type="email"
-                placeholder="admin@astroparamarsh.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 disabled={loading}
-                className="h-11 border-slate-200 bg-white"
+                autoComplete="username"
+                className="h-11 border-stone-200 bg-white text-stone-900 focus-visible:border-stone-400 focus-visible:ring-stone-200"
               />
             </div>
 
             <div className="space-y-2">
-              <label className="text-sm font-medium text-slate-700">Password</label>
+              <label className="text-sm font-medium text-stone-700">Password</label>
               <div className="relative">
                 <Input
                   type={showPassword ? 'text' : 'password'}
-                  placeholder="••••••••"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
                   disabled={loading}
-                  className="h-11 border-slate-200 bg-white pr-10"
+                  autoComplete="current-password"
+                  className="h-11 border-stone-200 bg-white pr-11 text-stone-900 focus-visible:border-stone-400 focus-visible:ring-stone-200"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-700"
+                  aria-label={showPassword ? 'Hide password' : 'Show password'}
                 >
                   {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                 </button>
@@ -131,15 +131,11 @@ export default function AdminLogin() {
             <Button
               type="submit"
               disabled={loading}
-              className="h-11 w-full bg-slate-900 text-white hover:bg-slate-800"
+              className="h-11 w-full bg-stone-900 text-sm font-medium text-white hover:bg-stone-800"
             >
               {loading ? 'Signing in…' : 'Sign in'}
             </Button>
           </form>
-
-          <p className="mt-6 text-center text-xs text-slate-400">
-            Protected area. Contact your administrator for access.
-          </p>
         </div>
       </div>
     </main>

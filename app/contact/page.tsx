@@ -5,7 +5,7 @@ import ContactPageClient from './ContactPageClient';
 export const metadata: Metadata = buildMetadata({
   title: 'Contact Us',
   description:
-    'Book a Vedic astrology or tarot consultation with Astro Paramarsh in Lucknow. Call, WhatsApp or send an enquiry — we respond within 24 hours.',
+    'Book a Vedic astrology or tarot consultation with Astro Suvid in Lucknow. Call, WhatsApp or send an enquiry — we respond within 24 hours.',
   path: '/contact',
   keywords: [
     'contact astrologer lucknow',

@@ -166,7 +166,7 @@ export default function ServicesPage() {
         />
       </div>
 
-      <div className="overflow-hidden rounded-xl border border-slate-200/80 bg-white shadow-sm">
+      <div className="overflow-hidden admin-panel">
         {loading ? (
           <div className="py-16 text-center text-sm text-slate-500">Loading services…</div>
         ) : services.length === 0 ? (
@@ -196,7 +196,7 @@ export default function ServicesPage() {
               </thead>
               <tbody className="divide-y divide-slate-100">
                 {services.map((service) => (
-                  <tr key={service.id} className="hover:bg-slate-50/80">
+                  <tr key={service.id} className="hover:bg-[#faf7f2]/80">
                     <td className="px-5 py-4">
                       <p className="font-medium text-slate-900">{service.title}</p>
                       <p className="text-xs text-slate-500">{service.slug}</p>

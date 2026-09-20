@@ -71,8 +71,14 @@ export default function Header() {
       <div className="section-container max-md:px-4">
         <nav className="flex items-center justify-between gap-2 md:gap-3">
           <Logo
+            variant={useLightText ? 'mark' : 'full'}
+            showText={useLightText}
             className="group flex shrink-0 items-center gap-2 overflow-visible md:gap-2.5"
-            imageClassName="h-10 w-10 shrink-0 md:h-11 md:w-11"
+            imageClassName={
+              useLightText
+                ? 'h-11 w-11 shrink-0 md:h-12 md:w-12'
+                : 'h-11 w-auto max-w-[180px] shrink-0 sm:h-12 sm:max-w-[210px] md:h-14 md:max-w-[240px]'
+            }
             textClassName={`shrink-0 overflow-visible font-serif font-bold transition-colors duration-300 text-sm leading-tight tracking-tight md:text-xl md:leading-normal lg:text-2xl md:tracking-tighter ${
               useLightText ? 'text-white/90' : 'text-stone-600'
             }`}
@@ -196,8 +202,8 @@ export default function Header() {
           {/* Panel header */}
           <div className="flex items-center justify-between border-b border-border/50 px-5 pb-4 pt-[max(1.25rem,env(safe-area-inset-top))]">
             <Logo
-              imageClassName="h-10 w-10 shrink-0"
-              textClassName="font-serif text-sm font-bold leading-tight tracking-tight text-stone-600"
+              variant="full"
+              imageClassName="h-11 w-auto max-w-[200px] shrink-0"
             />
             <button
               type="button"

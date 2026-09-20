@@ -1,7 +1,7 @@
-# Astro Paramarsh - Website Setup Guide
+# Astro Suvid - Website Setup Guide
 
 ## Overview
-This is a premium vedic astrology and tarot card reading website for Astro Paramarsh. The site features a cosmic, celestial design with smooth animations and a professional layout.
+This is a premium vedic astrology and tarot card reading website for Astro Suvid. The site features a cosmic, celestial design with smooth animations and a professional layout.
 
 ## Key Features
 
@@ -49,11 +49,11 @@ Update these in all files:
 - **WhatsApp Number**: Replace `+919999999999` with your WhatsApp number
   - Found in: `components/Header.tsx`, `components/Hero.tsx`, `components/Footer.tsx`, `app/contact/page.tsx`
   
-- **Email**: Replace `hello@astroparamarsh.com` with your email
+- **Email**: Replace `hello@astrosuvid.com` with your email
   - Found in: `components/Footer.tsx`, `app/contact/page.tsx`
 
 ### Branding & Content
-- **Logo/Name**: "Astro Paramarsh" - easily customizable in Header component
+- **Logo/Name**: "Astro Suvid" - easily customizable in Header component
 - **Tagline**: Edit in `components/Hero.tsx`
 - **About Text**: Update in `components/AstrologerProfile.tsx`
 - **Services**: Modify in `components/Services.tsx` and `app/services/page.tsx`

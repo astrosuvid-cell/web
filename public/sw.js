@@ -1,9 +1,17 @@
-const CACHE_NAME = 'astro-paramarsh-v1';
+const CACHE_NAME = 'astro-suvid-v1';
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) =>
-      cache.addAll(['/', '/manifest.json', '/logo.png', '/icon-192.png'])
+      cache.addAll([
+        '/',
+        '/manifest.json',
+        '/logo.png',
+        '/logo-mark.png',
+        '/icon-192.png',
+        '/icon-512.png',
+        '/apple-touch-icon.png',
+      ])
     )
   );
   self.skipWaiting();

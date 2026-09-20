@@ -5,7 +5,7 @@ import { buildMetadata, breadcrumbJsonLd, servicesItemListJsonLd } from '@/lib/s
 export const metadata: Metadata = buildMetadata({
   title: 'Our Astrology & Tarot Services',
   description:
-    'Explore Vedic astrology, tarot readings, kundli matching, Vastu, numerology, career and marriage guidance — personalized consultations from Astro Paramarsh.',
+    'Explore Vedic astrology, tarot readings, kundli matching, Vastu, numerology, career and marriage guidance — personalized consultations from Astro Suvid.',
   path: '/services',
   keywords: [
     'astrology services',

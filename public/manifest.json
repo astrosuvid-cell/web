@@ -1,17 +1,17 @@
 {
   "id": "/",
-  "name": "Astro Paramarsh — Vedic Astrology & Tarot",
-  "short_name": "Astro Paramarsh",
+  "name": "Astro Suvid — Vedic Astrology & Tarot",
+  "short_name": "Astro Suvid",
   "description": "Expert Vedic astrology, tarot readings, kundli matching and gemstone guidance in Lucknow.",
-  "start_url": "https://www.astroparamarsh.com/?source=pwa",
+  "start_url": "https://www.astrosuvid.com/?source=pwa",
   "scope": "/",
   "display": "standalone",
   "display_override": ["standalone", "minimal-ui", "browser"],
   "orientation": "portrait-primary",
   "lang": "hi-IN",
   "dir": "ltr",
-  "background_color": "#fafaf9",
-  "theme_color": "#d97706",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
   "categories": ["lifestyle", "health"],
   "prefer_related_applications": false,
   "icons": [
@@ -22,14 +22,20 @@
       "purpose": "any"
     },
     {
-      "src": "/icon-192.png",
-      "sizes": "192x192",
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512-maskable.png",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/icon-512.png",
-      "sizes": "512x512",
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
       "type": "image/png",
       "purpose": "any"
     }

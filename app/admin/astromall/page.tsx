@@ -222,7 +222,7 @@ export default function AstroMallAdmin() {
       </div>
 
       {/* Filters */}
-      <div className="mt-8 rounded-xl border border-slate-200/80 bg-white p-4 shadow-sm sm:p-5">
+      <div className="mt-8 admin-panel p-4 shadow-sm sm:p-5">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <div className="relative flex-1 lg:max-w-md">
             <Search
@@ -301,7 +301,7 @@ export default function AstroMallAdmin() {
       {/* Product list */}
       <div className="mt-6">
         {loading ? (
-          <div className="rounded-xl border border-slate-200/80 bg-white py-20 text-center text-sm text-slate-500 shadow-sm">
+          <div className="admin-panel py-20 text-center text-sm text-slate-500 shadow-sm">
             Loading catalog…
           </div>
         ) : filteredProducts.length === 0 ? (
@@ -321,7 +321,7 @@ export default function AstroMallAdmin() {
             {filteredProducts.map((product) => (
               <article
                 key={product.id}
-                className="group overflow-hidden rounded-xl border border-slate-200/80 bg-white shadow-sm transition-shadow hover:shadow-md"
+                className="group overflow-hidden admin-panel transition-shadow hover:shadow-md"
               >
                 <div className="relative aspect-[4/3] bg-slate-100">
                   {product.image_url ? (
@@ -372,7 +372,7 @@ export default function AstroMallAdmin() {
             ))}
           </div>
         ) : (
-          <div className="overflow-hidden rounded-xl border border-slate-200/80 bg-white shadow-sm">
+          <div className="overflow-hidden admin-panel">
             <div className="overflow-x-auto">
               <table className="w-full min-w-[800px] text-left text-sm">
                 <thead>
@@ -386,7 +386,7 @@ export default function AstroMallAdmin() {
                 </thead>
                 <tbody className="divide-y divide-slate-100">
                   {filteredProducts.map((product) => (
-                    <tr key={product.id} className="hover:bg-slate-50/80">
+                    <tr key={product.id} className="hover:bg-[#faf7f2]/80">
                       <td className="px-5 py-4">
                         <div className="flex items-center gap-3">
                           <div className="h-10 w-10 shrink-0 overflow-hidden rounded-lg bg-slate-100">

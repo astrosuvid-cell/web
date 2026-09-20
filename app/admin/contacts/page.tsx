@@ -172,7 +172,7 @@ export default function ContactsPage() {
           <Button
             onClick={exportToCSV}
             variant="outline"
-            className="gap-2 border-slate-200 bg-white text-slate-700 hover:bg-slate-50"
+            className="gap-2 border-slate-200 bg-white text-slate-700 hover:bg-[#faf7f2]"
           >
             <Download size={16} />
             Export CSV
@@ -181,7 +181,7 @@ export default function ContactsPage() {
       />
 
       {/* Filters */}
-      <div className="mb-6 space-y-4 rounded-xl border border-slate-200/80 bg-white p-4 shadow-sm sm:p-5">
+      <div className="mb-6 space-y-4 admin-panel p-4 shadow-sm sm:p-5">
         <div className="relative">
           <Search
             size={16}
@@ -245,7 +245,7 @@ export default function ContactsPage() {
       <div className="grid gap-6 xl:grid-cols-12">
         {/* Table */}
         <div className="xl:col-span-7 2xl:col-span-8">
-          <div className="overflow-hidden rounded-xl border border-slate-200/80 bg-white shadow-sm">
+          <div className="overflow-hidden admin-panel">
             <div className="border-b border-slate-100 px-5 py-3.5">
               <p className="text-sm font-medium text-slate-900">
                 {filteredContacts.length} result{filteredContacts.length !== 1 ? 's' : ''}
@@ -272,7 +272,7 @@ export default function ContactsPage() {
                       <tr
                         key={contact.id}
                         onClick={() => setSelectedContact(contact)}
-                        className={`cursor-pointer transition-colors hover:bg-slate-50 ${
+                        className={`cursor-pointer transition-colors hover:bg-[#faf7f2] ${
                           selectedContact?.id === contact.id ? 'bg-blue-50/60' : ''
                         }`}
                       >
@@ -305,7 +305,7 @@ export default function ContactsPage() {
         {/* Detail panel */}
         <div className="xl:col-span-5 2xl:col-span-4">
           {selectedContact ? (
-            <div className="sticky top-6 overflow-hidden rounded-xl border border-slate-200/80 bg-white shadow-sm">
+            <div className="sticky top-6 overflow-hidden admin-panel">
               <div className="flex items-start justify-between border-b border-slate-100 px-5 py-4">
                 <div>
                   <h2 className="text-base font-semibold text-slate-900">{selectedContact.name}</h2>

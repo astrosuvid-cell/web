@@ -1,8 +1,8 @@
-# Astro Paramarsh - Complete Project Summary
+# Astro Suvid - Complete Project Summary
 
 ## 🌟 Project Overview
 
-Astro Paramarsh is a premium astrology website featuring:
+Astro Suvid is a premium astrology website featuring:
 - **Vedic Astrology & Tarot Card Reading Services**
 - **Professional Admin Panel** for managing inquiries and services
 - **Mystical Visual Design** inspired by vedic traditions and tarot aesthetics
@@ -211,7 +211,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=
 ### 4. Add Admin User
 ```sql
 INSERT INTO admin_users (email, password_hash, name, role)
-VALUES ('admin@astroparamarsh.com', 'sha256_hash', 'Admin Name', 'admin')
+VALUES ('admin@astrosuvid.com', 'sha256_hash', 'Admin Name', 'admin')
 ```
 
 ### 5. Run Locally
@@ -270,7 +270,7 @@ npm run dev
 
 - Phone: +91 99999 99999
 - WhatsApp: wa.me/919999999999
-- Email: contact@astroparamarsh.com
+- Email: contact@astrosuvid.com
 
 ## 🚢 Deployment Checklist
 

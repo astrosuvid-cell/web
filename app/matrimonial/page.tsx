@@ -5,7 +5,7 @@ import { buildMetadata } from '@/lib/seo';
 export const metadata: Metadata = buildMetadata({
   title: 'Premium Matrimonial Services',
   description:
-    'Connect with verified profiles based on traditional values and astrological compatibility. Join Astro Paramarsh Matrimonial for meaningful connections.',
+    'Connect with verified profiles based on traditional values and astrological compatibility. Join Astro Suvid Matrimonial for meaningful connections.',
   path: '/matrimonial',
   keywords: [
     'matrimonial services',

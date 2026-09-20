@@ -61,7 +61,7 @@ export default function MatrimonialHero({ onRegisterClick }: MatrimonialHeroProp
               <a 
                 href={buildWhatsappHref(
                   settings.phone,
-                  "Hi, I'm interested in Astro Paramarsh Matrimonial services."
+                  "Hi, I'm interested in Astro Suvid Matrimonial services."
                 )} 
                 target="_blank"
                 rel="noopener noreferrer"

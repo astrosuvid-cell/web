@@ -8,7 +8,7 @@ import { buildMetadata } from '@/lib/seo';
 export const metadata: Metadata = buildMetadata({
   title: 'Privacy Policy',
   description:
-    'How Astro Paramarsh collects, uses, and protects your personal information for astrology consultations and online purchases.',
+    'How Astro Suvid collects, uses, and protects your personal information for astrology consultations and online purchases.',
   path: '/privacy-policy',
 });
 

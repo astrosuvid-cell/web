@@ -13,9 +13,9 @@ interface LanguageContextType {
 const translations = {
   en: {
     // Header
-    'brand.name.full': 'Astro Paramarsh',
+    'brand.name.full': 'Astro Suvid',
     'brand.name.prefix': 'Astro',
-    'brand.name.highlight': 'Paramarsh',
+    'brand.name.highlight': 'Suvid',
     'nav.home': 'Home',
     'nav.services': 'Services',
     'nav.blog': 'Blog',
@@ -283,7 +283,7 @@ const translations = {
     'footer.guides': 'Expert Guides',
     'footer.connect': 'Connect',
     'footer.legal': 'Legal',
-    'footer.rights': 'Astro Paramarsh. All Rights Reserved. Built in India 🇮🇳',
+    'footer.rights': 'Astro Suvid. All Rights Reserved. Built in India 🇮🇳',
     'footer.crafted': '',
     'footer.made_with': '',
     'footer.by_team': '',
@@ -382,7 +382,7 @@ const translations = {
     'nav.language': 'Language',
 
     // PWA install
-    'pwa.bar.title': 'Install Astro Paramarsh App',
+    'pwa.bar.title': 'Install Astro Suvid App',
     'pwa.bar.subtitle': 'Quick access to consultations & horoscope',
     'pwa.modal.title': 'Install our app for the best experience',
     'pwa.modal.subtitle': 'Get instant access to astrology services, bookings, and updates — right from your home screen.',
@@ -396,7 +396,7 @@ const translations = {
     'pwa.benefit3': 'Easy booking for consultations & services',
     'pwa.ios.step1': 'Tap the Share button at the bottom of Safari',
     'pwa.ios.step2': 'Scroll and tap "Add to Home Screen"',
-    'pwa.ios.step3': 'Tap Add — Astro Paramarsh will appear on your home screen',
+    'pwa.ios.step3': 'Tap Add — Astro Suvid will appear on your home screen',
     'pwa.android.fallback': 'Tap the menu (⋮) in your browser and select "Install app" or "Add to Home screen".',
 
     // Footer consult
@@ -532,13 +532,13 @@ const translations = {
     // About page
     'about.hero.title': 'Ancient wisdom,',
     'about.hero.highlight': 'explained clearly.',
-    'about.hero.subtitle': 'Astro Paramarsh was founded in Lucknow to make Vedic astrology and spiritual guidance accessible, practical, and genuinely useful — for relationships, career, health, and home.',
+    'about.hero.subtitle': 'Astro Suvid was founded in Lucknow to make Vedic astrology and spiritual guidance accessible, practical, and genuinely useful — for relationships, career, health, and home.',
     'about.pillar1.label': 'Years of practice',
     'about.pillar2.label': 'Consultations',
     'about.pillar3.label': 'Based in India',
     'about.story.title': 'Our story',
     'about.story.p1': 'We started with a simple belief: astrology should empower you to make better decisions, not leave you more confused. Too many seekers were getting generic readings or automated reports — we wanted something different.',
-    'about.story.p2': 'Today, Astro Paramarsh blends Vedic astrology, numerology, tarot, and Vastu into a holistic practice. Every consultation is handled by a trained expert who studies your chart manually and speaks in language you can act on.',
+    'about.story.p2': 'Today, Astro Suvid blends Vedic astrology, numerology, tarot, and Vastu into a holistic practice. Every consultation is handled by a trained expert who studies your chart manually and speaks in language you can act on.',
     'about.story.location': 'Lucknow, India — serving clients online worldwide',
     'about.values.title': 'What we stand for',
     'about.values.1.title': 'Clarity over confusion',
@@ -548,7 +548,7 @@ const translations = {
     'about.values.3.title': 'Warmth with professionalism',
     'about.values.3.desc': 'Every session is compassionate, respectful, and tailored to where you are right now.',
     'about.quote': 'We honour your journey with care — guided by the cycles of the cosmos and the timeless logic of Vedic traditions. Every reading is designed to help you feel seen, supported, and able to move forward.',
-    'about.quote.author': '— The Astro Paramarsh team',
+    'about.quote.author': '— The Astro Suvid team',
     'about.card1.title': 'Authentic wisdom',
     'about.card1.desc': 'Traditional astrology, tarot, and Vastu insight tied to real-life solutions.',
     'about.card2.title': 'Personal care',
@@ -734,9 +734,9 @@ const translations = {
   },
   hi: {
     // Header
-    'brand.name.full': 'एस्ट्रो परामर्श',
+    'brand.name.full': 'एस्ट्रो सुविद',
     'brand.name.prefix': 'एस्ट्रो',
-    'brand.name.highlight': 'परामर्श',
+    'brand.name.highlight': 'सुविद',
     'nav.home': 'होम',
     'nav.services': 'सेवाएं',
     'nav.blog': 'ब्लॉग',
@@ -1004,7 +1004,7 @@ const translations = {
     'footer.connect': 'जुड़ें',
     'footer.legal': 'कानूनी',
     'footer.address': 'लखनऊ, उत्तर प्रदेश, भारत',
-    'footer.rights': 'एस्ट्रो परामर्श। सर्वाधिकार सुरक्षित।',
+    'footer.rights': 'एस्ट्रो सुविद। सर्वाधिकार सुरक्षित।',
     'footer.crafted': 'आध्यात्मिक विकास के लिए निर्मित',
     'footer.made_with': 'निर्मित',
     'footer.by_team': 'कॉस्मिक टीम द्वारा',
@@ -1103,7 +1103,7 @@ const translations = {
     'nav.language': 'भाषा',
 
     // PWA install
-    'pwa.bar.title': 'एस्ट्रो परामर्श ऐप इंस्टॉल करें',
+    'pwa.bar.title': 'एस्ट्रो सुविद ऐप इंस्टॉल करें',
     'pwa.bar.subtitle': 'परामर्श और राशिफल तक तुरंत पहुँच',
     'pwa.modal.title': 'सबसे अच्छे अनुभव के लिए ऐप इंस्टॉल करें',
     'pwa.modal.subtitle': 'ज्योतिष सेवाएं, बुकिंग और अपडेट — सीधे होम स्क्रीन से तुरंत एक्सेस करें।',
@@ -1117,7 +1117,7 @@ const translations = {
     'pwa.benefit3': 'परामर्श और सेवाओं की आसान बुकिंग',
     'pwa.ios.step1': 'Safari में नीचे Share बटन पर टैप करें',
     'pwa.ios.step2': 'नीचे स्क्रॉल करके "Add to Home Screen" चुनें',
-    'pwa.ios.step3': 'Add पर टैप करें — एस्ट्रो परामर्श होम स्क्रीन पर दिखेगा',
+    'pwa.ios.step3': 'Add पर टैप करें — एस्ट्रो सुविद होम स्क्रीन पर दिखेगा',
     'pwa.android.fallback': 'ब्राउज़र मेनू (⋮) में जाएं और "Install app" या "Add to Home screen" चुनें।',
 
     // Footer consult
@@ -1253,13 +1253,13 @@ const translations = {
     // About page
     'about.hero.title': 'प्राचीन ज्ञान,',
     'about.hero.highlight': 'स्पष्ट भाषा में।',
-    'about.hero.subtitle': 'एस्ट्रो परामर्श की स्थापना लखनऊ में वैदिक ज्योतिष और आध्यात्मिक मार्गदर्शन को सुलभ, व्यावहारिक और वास्तव में उपयोगी बनाने के लिए की गई — रिश्तों, करियर, स्वास्थ्य और घर के लिए।',
+    'about.hero.subtitle': 'एस्ट्रो सुविद की स्थापना लखनऊ में वैदिक ज्योतिष और आध्यात्मिक मार्गदर्शन को सुलभ, व्यावहारिक और वास्तव में उपयोगी बनाने के लिए की गई — रिश्तों, करियर, स्वास्थ्य और घर के लिए।',
     'about.pillar1.label': 'वर्षों का अभ्यास',
     'about.pillar2.label': 'परामर्श',
     'about.pillar3.label': 'भारत में स्थित',
     'about.story.title': 'हमारी कहानी',
     'about.story.p1': 'हमने एक सरल विश्वास के साथ शुरुआत की: ज्योतिष को आपको बेहतर निर्णय लेने में सशक्त बनाना चाहिए, न कि और अधिक भ्रमित। बहुत से साधक सामान्य रीडिंग या स्वचालित रिपोर्ट पा रहे थे — हम कुछ अलग चाहते थे।',
-    'about.story.p2': 'आज, एस्ट्रो परामर्श वैदिक ज्योतिष, अंक ज्योतिष, टैरो और वास्तु को एक समग्र अभ्यास में मिलाता है। हर परामर्श एक प्रशिक्षित विशेषज्ञ द्वारा संभाला जाता है जो आपकी कुंडली का मैन्युअल अध्ययन करता है और ऐसी भाषा में बोलता है जिस पर आप कार्य कर सकें।',
+    'about.story.p2': 'आज, एस्ट्रो सुविद वैदिक ज्योतिष, अंक ज्योतिष, टैरो और वास्तु को एक समग्र अभ्यास में मिलाता है। हर परामर्श एक प्रशिक्षित विशेषज्ञ द्वारा संभाला जाता है जो आपकी कुंडली का मैन्युअल अध्ययन करता है और ऐसी भाषा में बोलता है जिस पर आप कार्य कर सकें।',
     'about.story.location': 'लखनऊ, भारत — दुनिया भर में ऑनलाइन ग्राहकों की सेवा',
     'about.values.title': 'हम किसके लिए खड़े हैं',
     'about.values.1.title': 'भ्रम पर स्पष्टता',
@@ -1269,7 +1269,7 @@ const translations = {
     'about.values.3.title': 'पेशेवरता के साथ स्नेह',
     'about.values.3.desc': 'हर सत्र करुणामय, सम्मानजनक और आपकी वर्तमान स्थिति के अनुरूप है।',
     'about.quote': 'हम आपकी यात्रा का सम्मान करते हुए देखभाल करते हैं — ब्रह्मांडीय चक्रों और वैदिक परंपराओं के कालातीत तर्क द्वारा मार्गदर्शित। हर रीडिंग आपको समझा हुआ, समर्थित और आगे बढ़ने में सक्षम महसूस कराने के लिए बनाई जाती है।',
-    'about.quote.author': '— एस्ट्रो परामर्श टीम',
+    'about.quote.author': '— एस्ट्रो सुविद टीम',
     'about.card1.title': 'प्रामाणिक ज्ञान',
     'about.card1.desc': 'वास्तविक जीवन समाधानों से जुड़ी पारंपरिक ज्योतिष, टैरो और वास्तु अंतर्दृष्टि।',
     'about.card2.title': 'व्यक्तिगत देखभाल',

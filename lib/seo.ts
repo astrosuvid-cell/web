@@ -4,15 +4,16 @@ import type { AstroProduct } from '@/lib/products';
 import type { SiteSettings } from '@/lib/siteSettings';
 import { DEFAULT_SITE_SETTINGS } from '@/lib/siteSettings';
 
-export const SITE_NAME = 'Astro Paramarsh';
+export const SITE_NAME = 'Astro Suvid';
 export const SITE_TAGLINE = 'Vedic Astrology & Tarot Card Reading';
 export const SITE_DESCRIPTION =
   'Expert Vedic astrology, tarot readings, kundli matching, Vastu and gemstone guidance in Lucknow. Personalized consultations for career, marriage, health and business.';
 export const SITE_LOCALE = 'en_IN';
 export const SITE_LOGO = '/logo.png';
-export const DEFAULT_OG_IMAGE = '/logo.png';
+export const SITE_LOGO_MARK = '/logo-mark.png';
+export const DEFAULT_OG_IMAGE = '/og-image.png';
 export const CONTACT_PHONE = '+919999999999';
-export const CONTACT_EMAIL = 'hello@astroparamarsh.com';
+export const CONTACT_EMAIL = 'hello@astrosuvid.com';
 export const BUSINESS_ADDRESS = {
   streetAddress: 'Lucknow',
   addressLocality: 'Lucknow',
@@ -21,7 +22,7 @@ export const BUSINESS_ADDRESS = {
   addressCountry: 'IN',
 };
 
-export const CANONICAL_SITE_URL = 'https://www.astroparamarsh.com';
+export const CANONICAL_SITE_URL = 'https://www.astrosuvid.com';
 
 export function getSiteUrl(): string {
   const envUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '');
@@ -198,6 +199,15 @@ export const rootMetadata: Metadata = {
     telephone: false,
   },
   category: 'Astrology',
+  icons: {
+    icon: [
+      { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+    ],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
+    shortcut: '/favicon-32.png',
+  },
   alternates: homeMetadata.alternates,
   openGraph: homeMetadata.openGraph,
   twitter: homeMetadata.twitter,
@@ -387,7 +397,7 @@ export function productJsonLd(product: AstroProduct) {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: product.name,
-    description: product.description || `${product.name} — authentic Vedic gemstone from Astro Paramarsh`,
+    description: product.description || `${product.name} — authentic Vedic gemstone from Astro Suvid`,
     image: product.image_url ? resolveImageUrl(product.image_url) : absoluteUrl(DEFAULT_OG_IMAGE),
     url: absoluteUrl(`/product/${product.id}`),
     brand: {
@@ -427,7 +437,7 @@ export function servicesItemListJsonLd() {
   return {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'Astro Paramarsh Services',
+    name: 'Astro Suvid Services',
     itemListElement: services.map((service, index) => ({
       '@type': 'ListItem',
       position: index + 1,
