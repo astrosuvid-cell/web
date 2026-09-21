@@ -65,7 +65,7 @@ const slides = [
     btnBg: 'bg-[#7C3AED]',
     icon: <Activity className="w-12 h-12 md:w-20 md:h-20" />,
     image: '/health.gif',
-    bottomImage: '/health.png',
+    bottomImage: '/health.jpg',
     questions: [
       'सेहत में सुधार कब होगा?', 
       'बार-बार बीमार क्यों पड़ते हैं?', 
@@ -356,16 +356,24 @@ export default function Hero() {
                       <div
                         className={`absolute -bottom-2 left-1/2 h-8 w-[70%] -translate-x-1/2 rounded-[100%] blur-2xl transition-colors duration-1000 ${slide.btnBg} opacity-20`}
                       />
-                      <img
-                        src={slide.bottomImage}
-                        alt=""
-                        width={960}
-                        height={720}
-                        decoding="async"
-                        loading={index === 0 ? 'eager' : 'lazy'}
-                        fetchPriority={index === 0 ? 'high' : 'low'}
-                        className="relative max-h-[220px] w-full max-w-md object-contain transition-all duration-1000 md:max-h-[420px] md:max-w-xl lg:max-h-[480px] lg:max-w-2xl"
-                      />
+                      {Math.abs(index - selectedIndex) <= 1 || index === 0 ? (
+                        <img
+                          src={slide.bottomImage}
+                          alt=""
+                          width={960}
+                          height={720}
+                          decoding="async"
+                          loading={index === selectedIndex ? 'eager' : 'lazy'}
+                          fetchPriority={index === selectedIndex ? 'high' : 'low'}
+                          className="relative max-h-[220px] w-full max-w-md object-contain transition-all duration-1000 md:max-h-[420px] md:max-w-xl lg:max-h-[480px] lg:max-w-2xl"
+                        />
+                      ) : (
+                        <div
+                          className="relative max-h-[220px] w-full max-w-md md:max-h-[420px] md:max-w-xl lg:max-h-[480px] lg:max-w-2xl"
+                          style={{ aspectRatio: '4 / 3' }}
+                          aria-hidden
+                        />
+                      )}
                     </div>
                   </div>
                 </div>

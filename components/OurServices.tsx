@@ -128,7 +128,7 @@ export default function OurServices() {
       id: 'vastu',
       title: t('service.vastu.title'),
       desc: t('service.vastu.desc'),
-      image: '/service-cards/Vastu-Shastra-Home-Layout.png',
+      image: '/service-cards/vastu.webp',
       imageAlt: 'Vastu shastra home layout',
       imageBg: 'from-emerald-50 via-teal-50 to-emerald-100 dark:from-emerald-950 dark:via-slate-900 dark:to-black',
       imageFit: 'cover',

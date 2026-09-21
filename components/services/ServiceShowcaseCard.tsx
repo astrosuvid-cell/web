@@ -66,6 +66,8 @@ export default function ServiceShowcaseCard({
         <img
           src={service.image}
           alt={service.imageAlt}
+          width={800}
+          height={600}
           loading="lazy"
           decoding="async"
           className={`absolute inset-0 h-full w-full transition-transform duration-700 group-hover:scale-[1.05] ${
