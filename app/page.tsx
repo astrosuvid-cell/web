@@ -1,19 +1,19 @@
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import Header from '@/components/Header';
-import { buildMetadata } from '@/lib/seo';
-import CosmicBackground from '@/components/CosmicBackground';
-import DepthAtmosphere from '@/components/effects/DepthAtmosphere';
-import TouchConstellation from '@/components/effects/TouchConstellation';
-import ScrollReveal3D from '@/components/effects/ScrollReveal3D';
 import Hero from '@/components/Hero';
-import WhyChooseUs from '@/components/WhyChooseUs';
-import OurServices from '@/components/OurServices';
-import HowItWorks from '@/components/HowItWorks';
-import AstroMall from '@/components/AstroMall';
-import Testimonials from '@/components/Testimonials';
-import CTABanner from '@/components/CTABanner';
-import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
+import { DeferredPageEffects } from '@/components/effects/DeferredEffects';
+import { buildMetadata } from '@/lib/seo';
+
+const ScrollReveal3D = dynamic(() => import('@/components/effects/ScrollReveal3D'));
+const WhyChooseUs = dynamic(() => import('@/components/WhyChooseUs'));
+const OurServices = dynamic(() => import('@/components/OurServices'));
+const HowItWorks = dynamic(() => import('@/components/HowItWorks'));
+const AstroMall = dynamic(() => import('@/components/AstroMall'));
+const Testimonials = dynamic(() => import('@/components/Testimonials'));
+const CTABanner = dynamic(() => import('@/components/CTABanner'));
+const ContactForm = dynamic(() => import('@/components/ContactForm'));
 
 export const metadata: Metadata = buildMetadata({
   title: 'Vedic Astrology & Tarot Reading in Lucknow',
@@ -33,9 +33,7 @@ export const metadata: Metadata = buildMetadata({
 export default function Home() {
   return (
     <main className="relative overflow-x-hidden bg-background">
-      <CosmicBackground />
-      <DepthAtmosphere />
-      <TouchConstellation />
+      <DeferredPageEffects />
       <Header />
       <Hero />
       <OurServices />

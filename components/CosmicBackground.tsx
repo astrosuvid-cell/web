@@ -28,9 +28,10 @@ export default function CosmicBackground() {
     let raf = 0;
     let running = true;
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isMobile = window.matchMedia('(pointer: coarse), (max-width: 768px)').matches;
 
     const resizeCanvas = () => {
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const dpr = Math.min(window.devicePixelRatio || 1, isMobile ? 1.25 : 2);
       canvas.width = Math.floor(window.innerWidth * dpr);
       canvas.height = Math.floor(window.innerHeight * dpr);
       canvas.style.width = `${window.innerWidth}px`;
@@ -40,7 +41,7 @@ export default function CosmicBackground() {
     resizeCanvas();
 
     const stars: Star[] = [];
-    const starCount = reduced ? 60 : 180;
+    const starCount = reduced ? 40 : isMobile ? 55 : 140;
     for (let i = 0; i < starCount; i++) {
       stars.push({
         x: Math.random() * window.innerWidth,

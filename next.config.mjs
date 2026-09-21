@@ -4,7 +4,9 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
+    formats: ['image/avif', 'image/webp'],
+    deviceSizes: [640, 750, 828, 1080, 1200],
+    imageSizes: [64, 96, 128, 256, 384],
   },
   async headers() {
     return [
@@ -32,7 +34,6 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      // Strip trailing slashes except root (canonical URLs have no trailing slash)
       {
         source: '/:path+/',
         destination: '/:path+',

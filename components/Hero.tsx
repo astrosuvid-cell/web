@@ -42,7 +42,7 @@ const slides = [
     btnBg: 'bg-[#D97706]',
     icon: <Briefcase className="w-12 h-12 md:w-20 md:h-20" />,
     image: '/career.gif',
-    bottomImage: '/wealth.png',
+    bottomImage: '/wealth.jpg',
     questions: [
       'सरकारी नौकरी कब मिलेगी?', 
       'प्रमोशन के योग कब हैं?', 
@@ -359,6 +359,11 @@ export default function Hero() {
                       <img
                         src={slide.bottomImage}
                         alt=""
+                        width={960}
+                        height={720}
+                        decoding="async"
+                        loading={index === 0 ? 'eager' : 'lazy'}
+                        fetchPriority={index === 0 ? 'high' : 'low'}
                         className="relative max-h-[220px] w-full max-w-md object-contain transition-all duration-1000 md:max-h-[420px] md:max-w-xl lg:max-h-[480px] lg:max-w-2xl"
                       />
                     </div>

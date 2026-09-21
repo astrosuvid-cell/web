@@ -1,4 +1,4 @@
-const CACHE_NAME = 'astro-suvid-v1';
+const CACHE_NAME = 'astro-suvid-v2';
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
@@ -6,7 +6,7 @@ self.addEventListener('install', (event) => {
       cache.addAll([
         '/',
         '/manifest.json',
-        '/logo.png',
+        '/logo.webp',
         '/logo-mark.png',
         '/icon-192.png',
         '/icon-512.png',

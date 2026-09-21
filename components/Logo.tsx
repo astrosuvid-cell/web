@@ -22,7 +22,7 @@ export default function Logo({
   textClassName = 'whitespace-nowrap text-xl font-serif font-bold tracking-tighter text-stone-600 md:text-2xl',
   variant = 'full',
   showText,
-  priority = true,
+  priority = false,
 }: LogoProps) {
   const { t } = useLanguage();
   const brandPrefix = t('brand.name.prefix');

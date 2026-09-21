@@ -20,6 +20,7 @@ export function useMotionParallax(strength = 1) {
   const gyro = useRef({ x: 0, y: 0 });
   const idle = useRef({ x: 0, y: 0 });
   const raf = useRef<number | null>(null);
+  const lastPublish = useRef(0);
   const reduced = useRef(false);
   const start = useRef(typeof performance !== 'undefined' ? performance.now() : 0);
 
@@ -95,7 +96,13 @@ export function useMotionParallax(strength = 1) {
       c.x += (blendX - c.x) * ease;
       c.y += (blendY - c.y) * ease;
       c.scroll += (target.current.scroll - c.scroll) * ease;
-      setPoint({ x: c.x, y: c.y, scroll: c.scroll });
+
+      // Throttle React updates (~20fps) to cut main-thread cost; transforms still smooth via RAF targets
+      const now = performance.now();
+      if (now - lastPublish.current > 50) {
+        lastPublish.current = now;
+        setPoint({ x: c.x, y: c.y, scroll: c.scroll });
+      }
       raf.current = requestAnimationFrame(tick);
     };
 

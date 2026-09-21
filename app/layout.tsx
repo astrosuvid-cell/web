@@ -15,19 +15,19 @@ import {
 } from '@/lib/seo'
 import PWAInstallPrompt from '@/components/pwa/PWAInstallPrompt'
 import ServiceWorkerRegister from '@/components/pwa/ServiceWorkerRegister'
-import CustomCursor from '@/components/effects/CustomCursor'
+import { DeferredCursor } from '@/components/effects/DeferredEffects'
 import './globals.css'
 
 const hind = Hind({
   subsets: ['latin', 'devanagari'],
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-hind',
   display: 'swap',
 })
 
 const notoSerif = Noto_Serif({
-  subsets: ['latin', 'latin-ext'],
-  weight: ['400', '500', '600', '700'],
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
   style: ['normal', 'italic'],
   variable: '--font-noto-serif',
   display: 'swap',
@@ -35,7 +35,7 @@ const notoSerif = Noto_Serif({
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '600', '700'],
   style: ['normal', 'italic'],
   variable: '--font-playfair',
   display: 'swap',
@@ -92,7 +92,7 @@ export default async function RootLayout({
             <LanguageProvider>
               <SelectedServiceProvider>
                 {children}
-                <CustomCursor />
+                <DeferredCursor />
                 <ServiceWorkerRegister />
                 <PWAInstallPrompt />
                 {process.env.NODE_ENV === 'production' && <Analytics />}

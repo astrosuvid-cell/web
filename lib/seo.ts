@@ -9,7 +9,7 @@ export const SITE_TAGLINE = 'Vedic Astrology & Tarot Card Reading';
 export const SITE_DESCRIPTION =
   'Expert Vedic astrology, tarot readings, kundli matching, Vastu and gemstone guidance in Lucknow. Personalized consultations for career, marriage, health and business.';
 export const SITE_LOCALE = 'en_IN';
-export const SITE_LOGO = '/logo.png';
+export const SITE_LOGO = '/logo.webp';
 export const SITE_LOGO_MARK = '/logo-mark.png';
 export const DEFAULT_OG_IMAGE = '/og-image.png';
 export const CONTACT_PHONE = '+919198969988';
