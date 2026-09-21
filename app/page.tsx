@@ -32,7 +32,7 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default function Home() {
-  preload('/marriage.webp', { as: 'image' });
+  preload('/marriage.png', { as: 'image' });
 
   return (
     <main className="relative overflow-x-hidden bg-background">

@@ -19,7 +19,7 @@ const slides = [
     btnBg: 'bg-[#E11D48]',
     icon: <Heart className="w-12 h-12 md:w-20 md:h-20" />,
     image: '/love.gif',
-    bottomImage: '/marriage.webp',
+    bottomImage: '/marriage.png',
     questions: [
       'मेरी शादी कब होगी?', 
       'क्या मुझे सच्चा प्यार मिलेगा?', 
@@ -42,7 +42,7 @@ const slides = [
     btnBg: 'bg-[#D97706]',
     icon: <Briefcase className="w-12 h-12 md:w-20 md:h-20" />,
     image: '/career.gif',
-    bottomImage: '/wealth.jpg',
+    bottomImage: '/wealth.png',
     questions: [
       'सरकारी नौकरी कब मिलेगी?', 
       'प्रमोशन के योग कब हैं?', 
@@ -65,7 +65,7 @@ const slides = [
     btnBg: 'bg-[#7C3AED]',
     icon: <Activity className="w-12 h-12 md:w-20 md:h-20" />,
     image: '/health.gif',
-    bottomImage: '/health.jpg',
+    bottomImage: '/health.png',
     questions: [
       'सेहत में सुधार कब होगा?', 
       'बार-बार बीमार क्यों पड़ते हैं?', 
