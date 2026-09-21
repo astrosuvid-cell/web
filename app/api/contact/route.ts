@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabaseServer';
+import { notifyAdminOfEnquiry } from '@/lib/notifyAdmin';
 
 export async function POST(request: NextRequest) {
   try {
@@ -12,14 +13,18 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const enquiry = {
+      name: name.trim(),
+      email: email?.trim() || 'not-provided@astrosuvid.com',
+      phone: phone?.trim() || 'Not provided',
+      service_type: service_type.trim(),
+      message: message.trim(),
+    };
+
     const { data, error } = await supabaseAdmin
       .from('contact_responses')
       .insert({
-        name: name.trim(),
-        email: email?.trim() || 'not-provided@astrosuvid.com',
-        phone: phone?.trim() || 'Not provided',
-        service_type: service_type.trim(),
-        message: message.trim(),
+        ...enquiry,
         status: 'new',
         created_at: new Date().toISOString(),
       })
@@ -31,6 +36,18 @@ export async function POST(request: NextRequest) {
         { error: 'Failed to submit form' },
         { status: 500 }
       );
+    }
+
+    try {
+      await notifyAdminOfEnquiry({
+        name: enquiry.name,
+        email: email?.trim() || undefined,
+        phone: phone?.trim() || undefined,
+        service_type: enquiry.service_type,
+        message: enquiry.message,
+      });
+    } catch (notifyError) {
+      console.error('Admin notification failed:', notifyError);
     }
 
     return NextResponse.json(
