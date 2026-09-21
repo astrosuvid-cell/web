@@ -22,7 +22,7 @@ export const BUSINESS_ADDRESS = {
   addressCountry: 'IN',
 };
 
-export const CANONICAL_SITE_URL = 'https://www.astrosuvid.com';
+export const CANONICAL_SITE_URL = 'https://astrosuvid.com';
 
 /** True when Google should index this deployment (never preview / vercel.app). */
 export function isProductionIndexing(): boolean {
