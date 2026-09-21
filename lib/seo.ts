@@ -24,6 +24,16 @@ export const BUSINESS_ADDRESS = {
 
 export const CANONICAL_SITE_URL = 'https://www.astrosuvid.com';
 
+/** True when Google should index this deployment (never preview / vercel.app). */
+export function isProductionIndexing(): boolean {
+  if (process.env.SEO_INDEXING === 'false') return false;
+  if (process.env.VERCEL_ENV === 'preview') return false;
+  if (process.env.VERCEL_ENV === 'development') return false;
+  const url = (process.env.NEXT_PUBLIC_SITE_URL || CANONICAL_SITE_URL).toLowerCase();
+  if (url.includes('vercel.app') || url.includes('localhost')) return false;
+  return true;
+}
+
 export function getSiteUrl(): string {
   const envUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '');
   if (envUrl) return envUrl;
@@ -31,6 +41,11 @@ export function getSiteUrl(): string {
     return `https://${process.env.VERCEL_URL}`;
   }
   return CANONICAL_SITE_URL;
+}
+
+/** Always the public brand URL for sitemap / robots host (not preview hosts). */
+export function getIndexedSiteUrl(): string {
+  return process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') || CANONICAL_SITE_URL;
 }
 
 export function absoluteUrl(path = ''): string {
@@ -114,15 +129,17 @@ export function buildMetadata(options: BuildMetadataOptions): Metadata {
       ? keywords
       : keywords.split(',').map((k) => k.trim()).filter(Boolean)
     : undefined;
+  const shouldNoIndex = noIndex || !isProductionIndexing();
 
   return {
-    title: fullTitle,
+    // absolute avoids double brand suffix from root title.template
+    title: { absolute: fullTitle },
     description,
     keywords: keywordList,
     alternates: { canonical },
     openGraph: {
       type,
-      locale: SITE_LOCALE.replace('_', '-'),
+      locale: SITE_LOCALE,
       url: canonical,
       siteName: SITE_NAME,
       title: fullTitle,
@@ -149,8 +166,8 @@ export function buildMetadata(options: BuildMetadataOptions): Metadata {
       description,
       images: [ogImage],
     },
-    robots: noIndex
-      ? { index: false, follow: false }
+    robots: shouldNoIndex
+      ? { index: false, follow: false, nocache: true }
       : {
           index: true,
           follow: true,
@@ -178,6 +195,7 @@ export const rootMetadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
   keywords: [
     'vedic astrology',
     'tarot reading',
@@ -189,6 +207,7 @@ export const rootMetadata: Metadata = {
     'daily horoscope',
     'marriage astrology',
     'career astrology',
+    'astro suvid',
   ],
   authors: [{ name: SITE_NAME, url: getSiteUrl() }],
   creator: SITE_NAME,
@@ -201,17 +220,28 @@ export const rootMetadata: Metadata = {
   category: 'Astrology',
   icons: {
     icon: [
+      { url: '/favicon.ico', sizes: 'any' },
       { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
       { url: '/favicon-16.png', sizes: '16x16', type: 'image/png' },
       { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
     ],
     apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
-    shortcut: '/favicon-32.png',
+    shortcut: '/favicon.ico',
+  },
+  verification: {
+    ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+      ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+      : {}),
+    ...(process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+      ? { other: { 'msvalidate.01': process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION } }
+      : {}),
   },
   alternates: homeMetadata.alternates,
   openGraph: homeMetadata.openGraph,
   twitter: homeMetadata.twitter,
-  robots: homeMetadata.robots,
+  robots: !isProductionIndexing()
+    ? { index: false, follow: false, nocache: true }
+    : homeMetadata.robots,
 };
 
 export function organizationJsonLd(settings: SiteSettings = DEFAULT_SITE_SETTINGS) {
@@ -260,14 +290,6 @@ export function websiteJsonLd() {
     description: SITE_DESCRIPTION,
     publisher: { '@id': `${getSiteUrl()}/#organization` },
     inLanguage: 'en-IN',
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: `${getSiteUrl()}/blog?q={search_term_string}`,
-      },
-      'query-input': 'required name=search_term_string',
-    },
   };
 }
 
@@ -344,6 +366,62 @@ export function localBusinessJsonLd(settings: SiteSettings = DEFAULT_SITE_SETTIN
             url: absoluteUrl('/kundli-matching'),
           },
         },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Marriage Astrology',
+            url: absoluteUrl('/marriage-astrology'),
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Career Astrology',
+            url: absoluteUrl('/career-astrology'),
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Business Growth Astrology',
+            url: absoluteUrl('/business-growth'),
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Vastu Consultation',
+            url: absoluteUrl('/vastu-consultation'),
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Gemstone Consultation',
+            url: absoluteUrl('/gemstone-consultation'),
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Numerology Services',
+            url: absoluteUrl('/numerology-services'),
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Matrimonial Services',
+            url: absoluteUrl('/matrimonial'),
+          },
+        },
       ],
     },
   };
@@ -380,7 +458,7 @@ export function articleJsonLd(post: BlogPost) {
       name: SITE_NAME,
       logo: {
         '@type': 'ImageObject',
-        url: absoluteUrl(DEFAULT_OG_IMAGE),
+        url: absoluteUrl(SITE_LOGO),
       },
     },
     mainEntityOfPage: {
