@@ -1,5 +1,6 @@
 import 'server-only';
 
+import { unstable_cache } from 'next/cache';
 import { getSupabaseAdmin } from '@/lib/supabaseServer';
 import {
   DEFAULT_SITE_SETTINGS,
@@ -7,7 +8,7 @@ import {
   type SiteSettings,
 } from '@/lib/siteSettings';
 
-export async function fetchSiteSettings(): Promise<SiteSettings> {
+async function loadSiteSettings(): Promise<SiteSettings> {
   try {
     const { data, error } = await getSupabaseAdmin()
       .from('site_settings')
@@ -22,6 +23,11 @@ export async function fetchSiteSettings(): Promise<SiteSettings> {
     return DEFAULT_SITE_SETTINGS;
   }
 }
+
+/** Cached for TTFB — settings rarely change. */
+export const fetchSiteSettings = unstable_cache(loadSiteSettings, ['site-settings-business'], {
+  revalidate: 300,
+});
 
 export async function saveSiteSettings(settings: SiteSettings): Promise<SiteSettings> {
   const normalized = normalizeSiteSettings(settings);

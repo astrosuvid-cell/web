@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
+import { preload } from 'react-dom';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Footer from '@/components/Footer';
@@ -31,6 +32,8 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default function Home() {
+  preload('/marriage.webp', { as: 'image' });
+
   return (
     <main className="relative overflow-x-hidden bg-background">
       <DeferredPageEffects />

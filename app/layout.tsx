@@ -23,6 +23,7 @@ const hind = Hind({
   weight: ['400', '500', '600', '700'],
   variable: '--font-hind',
   display: 'swap',
+  preload: false,
 })
 
 const notoSerif = Noto_Serif({
@@ -31,6 +32,7 @@ const notoSerif = Noto_Serif({
   style: ['normal', 'italic'],
   variable: '--font-noto-serif',
   display: 'swap',
+  preload: false,
 })
 
 const playfair = Playfair_Display({
@@ -39,6 +41,7 @@ const playfair = Playfair_Display({
   style: ['normal', 'italic'],
   variable: '--font-playfair',
   display: 'swap',
+  preload: true,
 })
 
 export const metadata: Metadata = {

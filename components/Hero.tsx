@@ -19,7 +19,7 @@ const slides = [
     btnBg: 'bg-[#E11D48]',
     icon: <Heart className="w-12 h-12 md:w-20 md:h-20" />,
     image: '/love.gif',
-    bottomImage: '/marriage.png',
+    bottomImage: '/marriage.webp',
     questions: [
       'मेरी शादी कब होगी?', 
       'क्या मुझे सच्चा प्यार मिलेगा?', 
