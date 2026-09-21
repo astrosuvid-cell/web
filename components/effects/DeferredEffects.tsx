@@ -8,6 +8,9 @@ const CosmicBackground = dynamic(() => import('@/components/CosmicBackground'), 
 const DepthAtmosphere = dynamic(() => import('@/components/effects/DepthAtmosphere'), {
   ssr: false,
 });
+const TouchConstellation = dynamic(() => import('@/components/effects/TouchConstellation'), {
+  ssr: false,
+});
 const CustomCursor = dynamic(() => import('@/components/effects/CustomCursor'), {
   ssr: false,
 });
@@ -18,6 +21,7 @@ export function DeferredPageEffects() {
     <>
       <CosmicBackground />
       <DepthAtmosphere />
+      <TouchConstellation />
     </>
   );
 }

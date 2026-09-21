@@ -30,16 +30,13 @@ export default function CustomCursor() {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reduced) return;
 
-    // Skip glitter canvas on touch phones — big LCP/TBT win on mobile Lighthouse
-    const isTouch = window.matchMedia('(pointer: coarse)').matches;
-    if (isTouch) return;
-
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d', { alpha: true });
     if (!ctx) return;
 
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const isTouch = window.matchMedia('(pointer: coarse)').matches;
+    const dpr = Math.min(window.devicePixelRatio || 1, isTouch ? 1.5 : 2);
     let w = 0;
     let h = 0;
     let mx = -999;
